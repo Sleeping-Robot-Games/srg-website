@@ -2,7 +2,7 @@
 
 <div class="grid grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
-	<header class="bg-red-500 p-4">(header)</header>
+	<header class="bg-red-500 p-4">Sleeping Robot Games (header)</header>
 	<!-- Page -->
 	<div class="container mx-auto grid grid-cols-1 xl:grid-cols-[200px_minmax(0px,_1fr)_200px]">
 		<!-- Sidebar (Left) -->
