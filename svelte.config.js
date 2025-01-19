@@ -12,11 +12,11 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: 'index.html',
-			precompress: true,
+			//precompress: true,
 			strict: true
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/srg-website' : ''
+			base: ''
 		}
 	}
 };
