@@ -11,15 +11,11 @@
 		<!-- Sidebar (Left) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
 		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
-			<img
-				src="/Steam_Broadcast_Panel_1.png"
-				class="h-auto w-full object-contain"
-				style="top: 0; position: absolute;"
-			/>
+			<img src="/Steam_Broadcast_Panel_1.png" class="h-full w-auto object-cover" />
 		</aside>
 		<!-- Main -->
 		<main class="col-span-1 h-screen space-y-4 bg-gray-800 p-4 text-white">
-			<div class="space-y-4 bg-gray-900 p-4">
+			<div class="min-h-screen space-y-4 bg-gray-900 p-4">
 				<h1 class="text-5xl font-bold">Smokin Potions</h1>
 				<p>
 					PressKit: <a
@@ -56,11 +52,7 @@
 		<!-- Sidebar (Right) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
 		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
-			<img
-				src="/Steam_Broadcast_Panel_2_1.png"
-				class="h-auto w-full object-contain"
-				style="top: 0; position: absolute;"
-			/>
+			<img src="/Steam_Broadcast_Panel_2_1.png" class="h-full w-auto object-cover" />
 		</aside>
 	</div>
 	<!-- Footer -->
