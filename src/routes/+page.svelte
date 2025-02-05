@@ -2,7 +2,7 @@
 
 <div class="grid grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
-	<header class="flex items-center justify-center bg-gray-800 p-4">
+	<header class="flex items-center justify-center bg-gray-700 p-4">
 		<img src="/srglogo.png" alt="Sleeping Robot Games" class="mr-4 h-12" />
 		<span class="text-3xl font-bold text-white">Sleeping Robot Games</span>
 	</header>
@@ -10,8 +10,12 @@
 	<div class="container mx-auto grid grid-cols-1 xl:grid-cols-[200px_minmax(0px,_1fr)_200px]">
 		<!-- Sidebar (Left) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
-		<aside class="sticky top-0 col-span-1 hidden h-screen bg-gray-700 xl:block">
-			<img src="/Steam_Broadcast_Panel_1.png" class="h-full w-full object-contain" />
+		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
+			<img
+				src="/Steam_Broadcast_Panel_1.png"
+				class="h-auto w-full object-contain"
+				style="top: 0; position: absolute;"
+			/>
 		</aside>
 		<!-- Main -->
 		<main class="col-span-1 h-screen space-y-4 bg-gray-800 p-4 text-white">
@@ -51,12 +55,16 @@
 		</main>
 		<!-- Sidebar (Right) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
-		<aside class="sticky top-0 col-span-1 hidden h-screen bg-gray-700 xl:block">
-			<img src="/Steam_Broadcast_Panel_2_1.png" class="h-full w-full object-contain" />
+		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
+			<img
+				src="/Steam_Broadcast_Panel_2_1.png"
+				class="h-auto w-full object-contain"
+				style="top: 0; position: absolute;"
+			/>
 		</aside>
 	</div>
 	<!-- Footer -->
-	<footer class="bg-gray-800 p-4 text-center text-white">
+	<footer class="bg-gray-700 p-4 text-center text-white">
 		<p>Follow on Bluesky</p>
 		<p>© 2025 Sleeping Robot Games</p>
 	</footer>
