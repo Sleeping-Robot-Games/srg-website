@@ -1,3 +1,7 @@
+<script>
+	import IconMail from 'lucide-svelte/icons/mail';
+</script>
+
 <!-- For best results, preview this in either the full-width or full-screen preview modes. -->
 
 <div class="grid grid-rows-[auto_1fr_auto]">
@@ -50,6 +54,15 @@
 						allowfullscreen
 						class="h-full w-full"
 					></iframe>
+				</div>
+				<div class="mx-auto max-w-[800px] pt-4">
+					<button
+						type="button"
+						class="btn flex w-full items-center justify-center gap-2 preset-outlined-primary-500"
+					>
+						<IconMail class="btn-icon" />
+						<span>Join our Mailing List</span>
+					</button>
 				</div>
 			</div>
 		</main>
