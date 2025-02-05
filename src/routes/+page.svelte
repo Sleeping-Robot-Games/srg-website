@@ -2,26 +2,62 @@
 
 <div class="grid grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
-	<header class="bg-red-500 p-4">Sleeping Robot Games (header)</header>
+	<header class="flex items-center justify-center bg-gray-800 p-4">
+		<img src="/srglogo.png" alt="Sleeping Robot Games" class="mr-4 h-12" />
+		<span class="text-3xl font-bold text-white">Sleeping Robot Games</span>
+	</header>
 	<!-- Page -->
 	<div class="container mx-auto grid grid-cols-1 xl:grid-cols-[200px_minmax(0px,_1fr)_200px]">
 		<!-- Sidebar (Left) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
-		<aside class="sticky top-0 col-span-1 hidden h-screen bg-yellow-500 p-4 xl:block">
-			(sidebar)
+		<aside class="sticky top-0 col-span-1 hidden h-screen bg-gray-700 xl:block">
+			<img src="/Steam_Broadcast_Panel_1.png" class="h-full w-full object-contain" />
 		</aside>
 		<!-- Main -->
-		<main class="col-span-1 space-y-4 bg-green-500 p-4">
-			<p class="h-[512px] bg-purple-500 p-4">Paragraph 1</p>
-			<p class="h-[512px] bg-purple-500 p-4">Paragraph 2</p>
-			<p class="h-[512px] bg-purple-500 p-4">Paragraph 3</p>
+		<main class="col-span-1 h-screen space-y-4 bg-gray-800 p-4 text-white">
+			<div class="space-y-4 bg-gray-900 p-4">
+				<h1 class="text-5xl font-bold">Smokin Potions</h1>
+				<p>
+					PressKit: <a
+						href="https://drive.google.com/drive/folders/1T6g3YvxNZPVg05GcS8T8fUUWRDiH3b3c"
+						class="text-blue-400 hover:underline"
+						target="_blank">Download</a
+					>
+				</p>
+				<p>
+					Steam: <a
+						href="https://store.steampowered.com/app/3433720/Smokin_Potions/"
+						class="text-blue-400 hover:underline"
+						target="_blank">Visit</a
+					>
+				</p>
+				<p>
+					Chaos reigns as up to 4 friends battle in a magical, explosive local-multiplayer showdown.
+					Create your wizard, choose your magical affinity, mix elements, and craft explosive potion
+					bombs to dominate the arena. Even in defeat, haunt and sabotage rivals as a ghost, seizing
+					a second chance at glory.
+				</p>
+				<div class="mx-auto aspect-video max-w-[800px]">
+					<!-- svelte-ignore a11y_missing_attribute -->
+					<iframe
+						src="https://www.youtube.com/embed/-K70HoTjW5A?si=I3TjY3PuiFuJapx2&playsinline=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&fs=1&hl=en&autohide=1&widgetid=1&rel=0"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+						class="h-full w-full"
+					></iframe>
+				</div>
+			</div>
 		</main>
 		<!-- Sidebar (Right) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
-		<aside class="sticky top-0 col-span-1 hidden h-screen bg-yellow-500 p-4 xl:block">
-			(sidebar)
+		<aside class="sticky top-0 col-span-1 hidden h-screen bg-gray-700 xl:block">
+			<img src="/Steam_Broadcast_Panel_2_1.png" class="h-full w-full object-contain" />
 		</aside>
 	</div>
 	<!-- Footer -->
-	<footer class="bg-blue-500 p-4">(footer)</footer>
+	<footer class="bg-gray-800 p-4 text-center text-white">
+		<p>Follow on Bluesky</p>
+		<p>© 2025 Sleeping Robot Games</p>
+	</footer>
 </div>
