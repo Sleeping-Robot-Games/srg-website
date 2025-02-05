@@ -3,7 +3,7 @@
 <div class="grid grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
 	<header class="flex items-center justify-center bg-gray-700 p-4">
-		<img src="/srglogo.png" alt="Sleeping Robot Games" class="mr-4 h-12" />
+		<img src="/images/srglogo.png" alt="Sleeping Robot Games logo" class="mr-4 h-12" />
 		<span class="text-3xl font-bold text-white">Sleeping Robot Games</span>
 	</header>
 	<!-- Page -->
@@ -11,7 +11,11 @@
 		<!-- Sidebar (Left) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
 		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
-			<img src="/Steam_Broadcast_Panel_1.png" class="h-full w-auto object-cover" />
+			<img
+				src="/images/Steam_Broadcast_Panel_1.png"
+				class="h-full w-auto object-cover"
+				alt="Smokin Potions promo art (Wizard running with Potion overhead)"
+			/>
 		</aside>
 		<!-- Main -->
 		<main class="col-span-1 h-screen space-y-4 bg-gray-800 p-4 text-white">
@@ -52,7 +56,11 @@
 		<!-- Sidebar (Right) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
 		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
-			<img src="/Steam_Broadcast_Panel_2_1.png" class="h-full w-auto object-cover" />
+			<img
+				src="/images/Steam_Broadcast_Panel_2.png"
+				class="h-full w-auto object-cover"
+				alt="Smokin Potions promo art (Wizard placing sneaky Potion)"
+			/>
 		</aside>
 	</div>
 	<!-- Footer -->
