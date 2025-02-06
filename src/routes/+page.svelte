@@ -2,6 +2,10 @@
 	import IconMail from 'lucide-svelte/icons/mail';
 </script>
 
+<svelte:head>
+	<title>SRG - Home</title>
+</svelte:head>
+
 <!-- For best results, preview this in either the full-width or full-screen preview modes. -->
 
 <div class="grid grid-rows-[auto_1fr_auto]">
