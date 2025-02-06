@@ -84,7 +84,13 @@
 	</div>
 	<!-- Footer -->
 	<footer class="bg-gray-700 p-4 text-center text-white">
-		<p>Follow on Bluesky</p>
+		<p>
+			Follow on <a
+				href="https://bsky.app/profile/bronskydev.bsky.social"
+				class="text-blue-400 hover:underline"
+				target="_blank">Bluesky</a
+			>
+		</p>
 		<p>© 2025 Sleeping Robot Games</p>
 	</footer>
 </div>
