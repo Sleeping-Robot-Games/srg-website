@@ -56,13 +56,13 @@
 					></iframe>
 				</div>
 				<div class="mx-auto max-w-[800px] pt-4">
-					<button
-						type="button"
+					<a
+						href="mailto:support@sleepingrobotgames.com"
 						class="btn flex w-full items-center justify-center gap-2 preset-outlined-primary-500"
 					>
 						<IconMail class="btn-icon" />
-						<span>Join our Mailing List</span>
-					</button>
+						<span>Email Us</span>
+					</a>
 				</div>
 			</div>
 		</main>
