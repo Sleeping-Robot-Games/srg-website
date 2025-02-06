@@ -8,7 +8,9 @@
 	<!-- Header -->
 	<header class="flex items-center justify-center bg-gray-700 p-4">
 		<img src="/images/srglogo.png" alt="Sleeping Robot Games logo" class="mr-4 h-12" />
-		<span class="text-3xl font-bold text-white">Sleeping Robot Games</span>
+		<span class="text-3xl font-bold text-white" style="font-family: 'Orbitron Variable', sans-serif"
+			>Sleeping Robot Games</span
+		>
 	</header>
 	<!-- Page -->
 	<div class="container mx-auto grid grid-cols-1 xl:grid-cols-[200px_minmax(0px,_1fr)_200px]">
