@@ -20,7 +20,7 @@
 	<div class="container mx-auto grid grid-cols-1 xl:grid-cols-[200px_minmax(0px,_1fr)_200px]">
 		<!-- Sidebar (Left) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
-		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
+		<aside class="sticky top-0 col-span-1 hidden xl:block">
 			<img
 				src="/images/Steam_Broadcast_Panel_1.png"
 				class="h-full w-auto object-cover"
@@ -28,23 +28,48 @@
 			/>
 		</aside>
 		<!-- Main -->
-		<main class="col-span-1 h-screen space-y-4 bg-gray-800 p-4 text-white">
-			<div class="min-h-screen space-y-4 bg-gray-900 p-4">
+		<main class="col-span-1 space-y-4 bg-gray-800 p-4 text-white">
+			<div class="min- space-y-2 bg-gray-900 p-4">
 				<h1 class="text-5xl font-bold">Smokin Potions</h1>
-				<p>
+				<p class="text-lg">
 					PressKit: <a
 						href="https://drive.google.com/drive/folders/1T6g3YvxNZPVg05GcS8T8fUUWRDiH3b3c"
 						class="text-blue-400 hover:underline"
 						target="_blank">Download</a
 					>
 				</p>
-				<p>
+				<p class="text-lg">
 					Steam: <a
 						href="https://store.steampowered.com/app/3433720/Smokin_Potions/"
 						class="text-blue-400 hover:underline"
-						target="_blank">Visit</a
+						target="_blank">Store Page</a
 					>
 				</p>
+				<p class="text-lg">
+					Demo Available: <a
+						href="https://store.steampowered.com/app/3498340/Smokin_Potions_Demo/"
+						class="text-blue-400 hover:underline"
+						target="_blank">Download</a
+					>
+				</p>
+				<p class="text-lg">Platforms:</p>
+				<ul class="list-disc pl-6">
+					<li>Windows</li>
+					<li>SteamOS</li>
+					<li>MacOS</li>
+					<li>Linux</li>
+				</ul>
+				<p class="text-lg">Highlights:</p>
+				<ul class="list-disc pl-6">
+					<li>Local-multiplayer for 2-4 players, online via Steam Remote Play Together</li>
+					<li>Explosive pvp combat with mix-and-match elemental potion bombs</li>
+					<li>Inspired by games like <b>Bomberman 64</b> battle mode</li>
+					<li>
+						Each wizard has a unique magical affinity, changing how they interact with the elements
+					</li>
+					<li>Haunt and sabotage rivals as a ghost, seeking a second chance at victory</li>
+				</ul>
+				<p class="text-lg">Short Description:</p>
 				<p>
 					Chaos reigns as up to 4 friends battle in a magical, explosive local-multiplayer showdown.
 					Create your wizard, choose your magical affinity, mix elements, and craft explosive potion
@@ -74,7 +99,7 @@
 		</main>
 		<!-- Sidebar (Right) -->
 		<!-- NOTE: hidden in smaller screen sizes -->
-		<aside class="sticky top-0 col-span-1 hidden h-screen xl:block">
+		<aside class="sticky top-0 col-span-1 hidden xl:block">
 			<img
 				src="/images/Steam_Broadcast_Panel_2.png"
 				class="h-full w-auto object-cover"
