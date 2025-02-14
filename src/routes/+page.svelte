@@ -22,7 +22,7 @@
 		<!-- NOTE: hidden in smaller screen sizes -->
 		<aside class="sticky top-0 col-span-1 hidden xl:block">
 			<img
-				src="/images/Steam_Broadcast_Panel_1.png"
+				src="/images/Steam_Broadcast_Panel_1_big.png"
 				class="h-full w-auto object-cover"
 				alt="Smokin Potions promo art (Wizard running with Potion overhead)"
 			/>
@@ -101,7 +101,7 @@
 		<!-- NOTE: hidden in smaller screen sizes -->
 		<aside class="sticky top-0 col-span-1 hidden xl:block">
 			<img
-				src="/images/Steam_Broadcast_Panel_2.png"
+				src="/images/Steam_Broadcast_Panel_2_big.png"
 				class="h-full w-auto object-cover"
 				alt="Smokin Potions promo art (Wizard placing sneaky Potion)"
 			/>
