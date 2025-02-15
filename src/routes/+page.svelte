@@ -79,7 +79,7 @@
 				<div class="mx-auto aspect-video max-w-[800px]">
 					<!-- svelte-ignore a11y_missing_attribute -->
 					<iframe
-						src="https://www.youtube.com/embed/-K70HoTjW5A?si=I3TjY3PuiFuJapx2&playsinline=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&fs=1&hl=en&autohide=1&widgetid=1&rel=0"
+						src="https://www.youtube.com/embed/yh45XaDy0eA?si=ocQCSZOG-4Ph30Cv&playsinline=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&fs=1&hl=en&autohide=1&widgetid=1&rel=0"
 						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen
