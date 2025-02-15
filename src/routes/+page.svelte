@@ -52,7 +52,9 @@
 						target="_blank">Download</a
 					>
 				</p>
-				<p class="text-lg">Platforms: Windows, SteamOS, MacOS, Linux</p>
+				<p class="text-lg">
+					Platforms: <span class="text-base"> Windows, SteamOS, MacOS, Linux</span>
+				</p>
 				<p class="text-lg">Highlights:</p>
 				<ul class="list-disc pl-6">
 					<li>Local-multiplayer for 2-4 players, online via Steam Remote Play Together</li>
