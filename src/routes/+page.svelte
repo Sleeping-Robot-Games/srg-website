@@ -45,13 +45,13 @@
 						target="_blank">Store Page</a
 					>
 				</p>
-				<p class="text-lg">
+				<!-- <p class="text-lg">
 					Demo Available: <a
 						href="https://store.steampowered.com/app/3498340/Smokin_Potions_Demo/"
 						class="text-blue-400 hover:underline"
 						target="_blank">Download</a
 					>
-				</p>
+				</p> -->
 				<p class="text-lg">
 					Platforms: <span class="text-base"> Windows, SteamOS, MacOS, Linux</span>
 				</p>
@@ -75,7 +75,7 @@
 				<div class="mx-auto aspect-video max-w-[800px]">
 					<!-- svelte-ignore a11y_missing_attribute -->
 					<iframe
-						src="https://www.youtube.com/embed/yh45XaDy0eA?si=ocQCSZOG-4Ph30Cv&playsinline=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&fs=1&hl=en&autohide=1&widgetid=1&rel=0"
+						src="https://www.youtube.com/embed/z61VGaWREvg?si=ha_4ulGgZbQPwqWW&playsinline=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&fs=1&hl=en&autohide=1&widgetid=1&rel=0"
 						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen
