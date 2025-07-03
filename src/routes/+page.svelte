@@ -112,6 +112,14 @@
 				target="_blank">Bluesky</a
 			>
 		</p>
+		<p>
+			Visit our <a
+				href="https://linktr.ee/SleepingRobotGames"
+				class="text-blue-400 hover:underline"
+				target="_blank">Linktree</a
+			> for more links!
+		</p>
+
 		<p>© 2025 Sleeping Robot Games</p>
 	</footer>
 </div>
