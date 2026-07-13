@@ -3,12 +3,12 @@
 
 	onMount(() => {
 		const cats = [
-			{ name: 'Doodles', lvl: 0, min: 25, max: 75 },
-			{ name: 'Miniature', lvl: 2, min: 50, max: 100 },
-			{ name: 'Landscape', lvl: 4, min: 75, max: 125 },
-			{ name: 'Pop', lvl: 6, min: 100, max: 150 },
-			{ name: 'Memao', lvl: 8, min: 125, max: 175 },
-			{ name: 'Master', lvl: 10, min: 150, max: 200 }
+			{ name: 'Doodles', lvl: 0, min: 5, max: 25 },
+			{ name: 'Miniature', lvl: 2, min: 20, max: 40 },
+			{ name: 'Landscape', lvl: 4, min: 35, max: 55 },
+			{ name: 'Pop', lvl: 6, min: 50, max: 70 },
+			{ name: 'Memao', lvl: 8, min: 65, max: 85 },
+			{ name: 'Master', lvl: 10, min: 80, max: 100 }
 		];
 		const STAR_MULT = [0.6, 0.8, 1.0, 1.3, 1.7];
 
@@ -43,7 +43,8 @@
 			getOutput('b_hun').textContent = hunMult.toFixed(2);
 
 			getOutput('o_final').textContent = String(Math.round(mid * combo));
-			getOutput('o_range').textContent = `${Math.round(c.min * combo)}…${Math.round(c.max * combo)} g`;
+			getOutput('o_range').textContent =
+				`${Math.round(c.min * combo)}…${Math.round(c.max * combo)} g`;
 		}
 
 		['s_cat', 's_star', 's_logic', 's_insp', 's_hun'].forEach((id) =>
@@ -61,7 +62,9 @@
 	<h1>Painting sale-price calculator</h1>
 	<p class="sub">Mini Me Mao — models the gold value a finished painting sells for.</p>
 
-	<div class="formula">value = base(gold_min…gold_max) × star × (1 + logic×0.1) × inspiration × hunger</div>
+	<div class="formula">
+		value = base(gold_min…gold_max) × star × (1 + logic×0.1) × inspiration × hunger
+	</div>
 
 	<div class="gb-card">
 		<div class="gb-row">
@@ -95,7 +98,9 @@
 		>
 			<div>
 				<div class="gb-chip" style="margin-bottom:4px">Expected sale price (mid-range roll)</div>
-				<div class="gb-final"><span id="o_final">45</span><span style="font-size:22px; font-weight:400"> g</span></div>
+				<div class="gb-final">
+					<span id="o_final">45</span><span style="font-size:22px; font-weight:400"> g</span>
+				</div>
 			</div>
 			<div class="gb-chip" style="text-align:right; line-height:1.9">
 				<div>base <span class="gb-mult" id="b_base">50</span></div>
@@ -106,7 +111,9 @@
 			</div>
 		</div>
 		<div class="gb-chip" style="margin-top:10px">
-			Range with min…max roll: <span id="o_range" style="font-weight:500; color:var(--text-primary)">30…60 g</span>
+			Range with min…max roll: <span id="o_range" style="font-weight:500; color:var(--text-primary)"
+				>30…60 g</span
+			>
 		</div>
 	</div>
 </div>
@@ -117,8 +124,7 @@
 		margin: 0;
 		background: #1a1a19;
 		color: #ffffff;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-			sans-serif;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 		line-height: 1.6;
 		-webkit-font-smoothing: antialiased;
 	}
