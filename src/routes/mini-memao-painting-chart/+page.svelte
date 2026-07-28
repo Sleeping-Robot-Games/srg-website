@@ -55,12 +55,12 @@
 </script>
 
 <svelte:head>
-	<title>Mini Me Mao — Painting Sale-Price Calculator</title>
+	<title>Mini Me Mao: Painting Sale-Price Calculator</title>
 </svelte:head>
 
 <div class="page">
 	<h1>Painting sale-price calculator</h1>
-	<p class="sub">Mini Me Mao — models the gold value a finished painting sells for.</p>
+	<p class="sub">Mini Me Mao models the gold value a finished painting sells for.</p>
 
 	<div class="formula">
 		value = base(gold_min…gold_max) × star × (1 + logic×0.1) × inspiration × hunger
