@@ -142,7 +142,7 @@
 			</p>
 			<div class="tc-hero-ctas">
 				<a href={ITCH_URL} target="_blank" class="tc-btn tc-btn-primary"> Get it on itch.io </a>
-				<a href="#gallery" class="tc-btn tc-btn-ghost"> Demo Video </a>
+				<!-- <a href="#gallery" class="tc-btn tc-btn-ghost"> Demo Video </a> -->
 			</div>
 			<div class="tc-badge-row">
 				{#each badges as b}
@@ -161,14 +161,14 @@
 			</p>
 		</section>
 
-		<section class="tc-section tc-preview-section">
-			<div class="tc-preview">
-				<img
-					src="/images/sprite-creator/walking-memao-characters.gif"
-					alt="Five character sprites walking forward"
-				/>
-			</div>
-		</section>
+		<!-- <section class="tc-section tc-preview-section"> -->
+		<div class="tc-preview">
+			<img
+				src="/images/sprite-creator/idle-memao-characters.gif"
+				alt="Five character sprites walking forward"
+			/>
+		</div>
+		<!-- </section> -->
 
 		<section class="tc-section tc-trailer-section" id="gallery">
 			<h2 class="tc-h2">Demo Video</h2>
@@ -183,6 +183,13 @@
 				></iframe>
 			</div>
 		</section>
+
+		<div class="tc-preview">
+			<img
+				src="/images/sprite-creator/walking-memao-characters.gif"
+				alt="Five character sprites walking forward"
+			/>
+		</div>
 
 		<section class="tc-section">
 			<h2 class="tc-h2">Key Features</h2>
@@ -511,9 +518,9 @@
 	}
 
 	.tc-preview {
-		border-radius: 20px;
+		/* border-radius: 20px; */
 		overflow: hidden;
-		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+		/* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); */
 		max-width: 480px;
 		margin: 0 auto;
 	}
