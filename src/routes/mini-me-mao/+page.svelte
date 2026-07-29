@@ -22,7 +22,7 @@
 		{
 			icon: IconStore,
 			title: 'New stock every day',
-			body: 'Browse a shop that rotates with daily deals across furniture, decor, kitchens, and more. There’s always something fresh to bring home.'
+			body: 'Browse a shop that rotates with daily deals across furniture, decor, dress up styles, and more.'
 		},
 		{
 			icon: IconShirt,
@@ -112,7 +112,7 @@
 			<div class="mm-hero-ctas">
 				<span class="mm-btn mm-btn-primary" aria-disabled="true">
 					<IconSparkles class="h-4 w-4" />
-					Wishlist (Steam page coming soon)
+					Wishlist on Steam
 				</span>
 				<a href="https://linktr.ee/SleepingRobotGames" target="_blank" class="mm-btn mm-btn-ghost">
 					Follow for updates
@@ -149,10 +149,9 @@
 
 		<!-- Painting styles -->
 		<section class="mm-section mm-styles-section">
-			<h2 class="mm-h2">Six styles to master</h2>
+			<h2 class="mm-h2">Six painting styles to master</h2>
 			<p class="mm-styles-sub">
-				Real in-progress art straight from the game. Your mini’s brushwork gets more ambitious as
-				their painting skill grows.
+				Your mini’s brushwork gets more ambitious as their painting skill grows.
 			</p>
 			<div class="mm-styles-row">
 				{#each paintingStyles as s}
@@ -176,9 +175,6 @@
 					class="mm-gallery-img"
 				/>
 			</div>
-			<p class="mm-gallery-caption">
-				Trailer and Steam page are on the way. Follow along for the first look.
-			</p>
 		</section>
 
 		<!-- Follow CTA -->
@@ -363,7 +359,7 @@
 		font-size: clamp(1.05rem, 2.4vw, 1.5rem);
 		font-weight: 600;
 		color: var(--mm-cream);
-		max-width: 34ch;
+		max-width: 40ch;
 		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 	}
 
@@ -564,9 +560,16 @@
 
 	/* Follow */
 	.mm-follow-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		text-align: center;
 		background: linear-gradient(180deg, transparent, rgba(255, 63, 174, 0.08));
 		border-radius: 28px;
+	}
+
+	.mm-follow-section .mm-hero-ctas {
+		justify-content: center;
 	}
 
 	:global(.mm-follow-icon) {

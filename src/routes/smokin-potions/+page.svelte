@@ -479,7 +479,7 @@
 		box-shadow: 0 6px 18px rgba(255, 63, 174, 0.35);
 	}
 	:global(a.sp-btn-primary:hover) {
-		background: #ff5cbb;
+		background: #44a61f;
 	}
 
 	:global(.sp-btn-ghost) {

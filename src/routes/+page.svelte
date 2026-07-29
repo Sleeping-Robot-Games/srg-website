@@ -19,38 +19,65 @@
 	</header>
 
 	<main>
-		<section class="hub-grid">
-			<a href="/mini-me-mao" class="hub-card" style="--card-accent: #ff3fae;">
-				<div class="hub-card-img">
-					<img src="/images/mini-memao-capsule.png" alt="Mini Me-Mao" />
-				</div>
-				<div class="hub-card-body">
-					<div class="hub-card-title-row">
-						<h2>Mini Me-Mao</h2>
-						<span class="hub-badge">Coming Soon</span>
+		<section class="hub-category">
+			<h2 class="hub-category-title">Games</h2>
+			<div class="hub-grid">
+				<a href="/mini-me-mao" class="hub-card" style="--card-accent: #ff3fae;">
+					<div class="hub-card-img">
+						<img src="/images/mini-memao-capsule.png" alt="Mini Me-Mao" />
 					</div>
-					<p>A cozy desktop dollhouse where your mini paints, sells art, and decorates.</p>
-					<span class="hub-card-cta">
-						View game <IconArrowRight class="h-4 w-4" />
-					</span>
-				</div>
-			</a>
+					<div class="hub-card-body">
+						<div class="hub-card-title-row">
+							<h3>Mini Me-Mao</h3>
+							<span class="hub-badge">Coming Soon</span>
+						</div>
+						<p>A cozy desktop dollhouse where your mini paints, sells art, and decorates.</p>
+						<span class="hub-card-cta">
+							View game <IconArrowRight class="h-4 w-4" />
+						</span>
+					</div>
+				</a>
 
-			<a href="/smokin-potions" class="hub-card" style="--card-accent: #f5a623;">
-				<div class="hub-card-img">
-					<img src="/images/smokin-potions-capsule.png" alt="Smokin Potions" />
-				</div>
-				<div class="hub-card-body">
-					<div class="hub-card-title-row">
-						<h2>Smokin Potions</h2>
-						<span class="hub-badge hub-badge-live">Out Now</span>
+				<a href="/smokin-potions" class="hub-card" style="--card-accent: #f5a623;">
+					<div class="hub-card-img">
+						<img src="/images/smokin-potions-capsule.png" alt="Smokin Potions" />
 					</div>
-					<p>Explosive local-multiplayer potion battles for 2-4 players.</p>
-					<span class="hub-card-cta">
-						View game <IconArrowRight class="h-4 w-4" />
-					</span>
-				</div>
-			</a>
+					<div class="hub-card-body">
+						<div class="hub-card-title-row">
+							<h3>Smokin Potions</h3>
+							<span class="hub-badge hub-badge-live">Available Now</span>
+						</div>
+						<p>Explosive local-multiplayer potion battles for 2-4 players.</p>
+						<span class="hub-card-cta">
+							View game <IconArrowRight class="h-4 w-4" />
+						</span>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<section class="hub-category">
+			<h2 class="hub-category-title">Tools</h2>
+			<div class="hub-grid">
+				<a href="/memao-sprite-sheet-creator" class="hub-card" style="--card-accent: #5fd2c4;">
+					<div class="hub-card-img">
+						<img
+							src="/images/memao-sprite-sheet-creator-alt.png"
+							alt="Memao Sprite Sheet Creator"
+						/>
+					</div>
+					<div class="hub-card-body">
+						<div class="hub-card-title-row">
+							<h3>Memao Sprite Sheet Creator</h3>
+							<span class="hub-badge hub-badge-live">Available Now</span>
+						</div>
+						<p>Design pixel characters and export animated sprite sheets. No drawing required.</p>
+						<span class="hub-card-cta">
+							View tool <IconArrowRight class="h-4 w-4" />
+						</span>
+					</div>
+				</a>
+			</div>
 		</section>
 	</main>
 
@@ -143,6 +170,23 @@
 		padding: 3rem 1.5rem 3.5rem;
 	}
 
+	.hub-category {
+		margin-bottom: 3rem;
+	}
+	.hub-category:last-child {
+		margin-bottom: 0;
+	}
+
+	.hub-category-title {
+		font-family: 'Baloo 2 Variable', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--hub-cream-dim);
+		margin: 0 0 1.1rem;
+	}
+
 	.hub-grid {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -176,6 +220,7 @@
 	.hub-card-img {
 		aspect-ratio: 16 / 9;
 		overflow: hidden;
+		background: #10141a;
 	}
 
 	.hub-card-img img {
@@ -204,7 +249,7 @@
 		gap: 0.6rem;
 	}
 
-	.hub-card-title-row h2 {
+	.hub-card-title-row h3 {
 		font-family: 'Baloo 2 Variable', sans-serif;
 		font-size: 1.3rem;
 		font-weight: 700;
