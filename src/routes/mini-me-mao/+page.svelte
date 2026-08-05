@@ -175,6 +175,31 @@
 					class="mm-gallery-img"
 				/>
 			</div>
+			<div class="mm-gallery-grid">
+				<figure class="mm-shot">
+					<div class="mm-shot-frame">
+						<img
+							src="/images/mini-me-mao/pixel-capsule-style.gif"
+							alt="Animated pixel art of a Mini Me-Mao bedroom: a fish tank, grandfather clock, bonsai, bookshelf, and a mini standing on the rug"
+						/>
+					</div>
+					<figcaption class="mm-gallery-caption">
+						Create a cozy pixel art room for your mini artist
+					</figcaption>
+				</figure>
+				<figure class="mm-shot">
+					<div class="mm-shot-frame">
+						<img
+							src="/images/mini-me-mao/screenshot.png"
+							alt="The Mini Me-Mao window sitting on a Windows desktop, floating above the taskbar"
+							class="mm-shot-pixel"
+						/>
+					</div>
+					<figcaption class="mm-gallery-caption">
+						It sits right on your desktop, staying on top while you work.
+					</figcaption>
+				</figure>
+			</div>
 		</section>
 
 		<!-- Follow CTA -->
@@ -556,6 +581,51 @@
 		margin-top: 1rem;
 		color: var(--mm-cream-dim);
 		font-size: 0.95rem;
+	}
+
+	.mm-gallery-grid {
+		margin-top: 1.5rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		align-items: start;
+	}
+
+	.mm-shot {
+		margin: 0;
+	}
+
+	.mm-shot-frame {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--mm-panel);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+		aspect-ratio: 4 / 3;
+	}
+
+	.mm-shot-frame img {
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.mm-shot-frame .mm-shot-pixel {
+		image-rendering: pixelated;
+		width: auto;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.mm-gallery-grid .mm-gallery-caption {
+		margin-top: 0.75rem;
+		font-size: 0.9rem;
 	}
 
 	/* Follow */
