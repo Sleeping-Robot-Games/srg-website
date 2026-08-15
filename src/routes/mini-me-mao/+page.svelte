@@ -110,10 +110,14 @@
 			<img src="/images/mini-memao-logo.png" alt="Mini Me-Mao" class="mm-hero-logo" />
 			<p class="mm-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas">
-				<span class="mm-btn mm-btn-primary" aria-disabled="true">
+				<a
+					href="https://sleeping-robot-games.itch.io/mini-me-mao"
+					target="_blank"
+					class="mm-btn mm-btn-primary"
+				>
 					<IconSparkles class="h-4 w-4" />
-					Wishlist on Steam
-				</span>
+					Playtest on Itch.io
+				</a>
 				<a href="https://linktr.ee/SleepingRobotGames" target="_blank" class="mm-btn mm-btn-ghost">
 					Follow for updates
 				</a>
