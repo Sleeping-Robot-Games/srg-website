@@ -42,6 +42,10 @@
 
 	const PK = '/images/mini-me-mao/presskit';
 
+	// Drop the trailer zip into static/press/ and fill these in to enable the download button.
+	const trailerZip = '';
+	const trailerZipMeta = '';
+
 	const keyArt = [
 		{
 			name: 'Main capsule',
@@ -308,6 +312,19 @@
 					</figcaption>
 				</figure>
 			</div>
+			{#if trailerZip}
+				<a class="mm-btn mm-btn-zip" href={trailerZip} download>
+					<IconFolderDown class="h-4 w-4" />
+					Download all trailers
+					<span class="mm-zip-meta">{trailerZipMeta}</span>
+				</a>
+			{:else}
+				<span class="mm-btn mm-btn-zip mm-btn-zip-off" aria-disabled="true">
+					<IconFolderDown class="h-4 w-4" />
+					Download all trailers
+					<span class="mm-zip-meta">Available once the trailer lands</span>
+				</span>
+			{/if}
 		</section>
 
 		<!-- Assets -->
@@ -1086,6 +1103,12 @@
 	:global(a.mm-btn-zip:hover) {
 		border-color: var(--mm-pink);
 		color: var(--mm-pink-soft);
+	}
+
+	:global(.mm-btn-zip-off) {
+		cursor: default;
+		opacity: 0.55;
+		border-color: rgba(255, 255, 255, 0.18);
 	}
 
 	.mm-zip-meta {
