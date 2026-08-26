@@ -258,7 +258,7 @@
 			<p class="mm-pk-eyebrow">Press Kit</p>
 			<p class="mm-pk-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas mm-pk-hero-ctas">
-				<a href="#video" class="mm-btn mm-btn-primary">
+				<a href="#trailer" class="mm-btn mm-btn-primary">
 					<IconPlay class="h-4 w-4" />
 					Watch the trailer
 				</a>
@@ -319,13 +319,9 @@
 			</div>
 		</section>
 
-		<!-- Video -->
-		<section class="mm-section" id="video">
-			<h2 class="mm-h2">Video</h2>
-			<p class="mm-section-sub">
-				Cleared for use in videos, streams, and social posts. Horizontal and vertical cuts are both
-				in the download.
-			</p>
+		<!-- Trailer -->
+		<section class="mm-section" id="trailer">
+			<h2 class="mm-h2">Trailer</h2>
 			<figure class="mm-video">
 				<div class="mm-video-thumb mm-placeholder-wide">
 					{#if playing}
@@ -360,10 +356,6 @@
 		<!-- Assets -->
 		<section class="mm-section" id="assets">
 			<h2 class="mm-h2">Assets</h2>
-			<p class="mm-section-sub">
-				Right-click and save, or use the download link under each file. Everything here is cleared
-				for coverage.
-			</p>
 			<a class="mm-btn mm-btn-zip" href={driveMirror} target="_blank" rel="noreferrer">
 				<IconFolderDown class="h-4 w-4" />
 				Download everything
