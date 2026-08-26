@@ -3,21 +3,30 @@
 	import IconDownload from 'lucide-svelte/icons/download';
 	import IconFolderDown from 'lucide-svelte/icons/folder-down';
 	import IconInfo from 'lucide-svelte/icons/info';
-	import IconFilm from 'lucide-svelte/icons/film';
-	import IconSmartphone from 'lucide-svelte/icons/smartphone';
+	import IconPlay from 'lucide-svelte/icons/play';
+	import IconArrowLeft from 'lucide-svelte/icons/arrow-left';
+	import IconSparkle from 'lucide-svelte/icons/sparkle';
+	import IconExternalLink from 'lucide-svelte/icons/external-link';
 	import IconCheck from 'lucide-svelte/icons/check';
+
+	// Set this once the Steam page is live; the nav badge and factsheet both use it.
+	// TODO: replace with the real Steam app id before deploying.
+	/** @type {string} */
+	const steamUrl = 'https://store.steampowered.com/app/0000000/Mini_MeMao/';
 
 	const factsheet = [
 		{ label: 'Developer', value: 'Sleeping Robot Games' },
 		{ label: 'Genre', value: 'Cozy / Desktop Companion / Idle' },
 		{ label: 'Platform', value: 'PC (Windows, macOS, Linux)' },
-		{ label: 'Release window', value: '[Release window]', todo: true },
+		{ label: 'Release window', value: '2027' },
 		{
 			label: 'Press contact',
 			value: 'press@sleepingrobotgames.com',
 			href: 'mailto:press@sleepingrobotgames.com'
 		},
-		{ label: 'Steam page', value: '[Steam page link]', todo: true }
+		steamUrl
+			? { label: 'Steam page', value: steamUrl.replace(/^https?:\/\//, ''), href: steamUrl }
+			: { label: 'Steam page', value: '[Steam page link]', todo: true }
 	];
 
 	const features = [
@@ -42,9 +51,18 @@
 
 	const PK = '/images/mini-me-mao/presskit';
 
-	// Drop the trailer zip into static/press/ and fill these in to enable the download button.
-	const trailerZip = '';
-	const trailerZipMeta = '';
+	// Full mirror of every press asset, in case a direct download fails.
+	const driveMirror = 'https://drive.google.com/drive/folders/1RjT0vIiN7YhAJOAl1Itpv0SZUrjFN810';
+
+	const trailerZip =
+		'https://drive.google.com/drive/folders/1rxFex9bRoP3EQaZpvMFk0H_ImPitBd8i?usp=drive_link';
+	const trailerZipMeta = 'Google Drive · horizontal + vertical';
+
+	// TODO: swap in the real YouTube id.
+	const trailerId = 'REPLACE_ME';
+
+	// The embed only loads once the visitor clicks play.
+	let playing = $state(false);
 
 	const keyArt = [
 		{
@@ -200,6 +218,25 @@
 </svelte:head>
 
 <div class="mm-page">
+	<!-- Nav -->
+	<nav class="mm-nav">
+		<a href="/mini-me-mao" class="mm-nav-back">
+			<IconArrowLeft class="h-4 w-4" />
+			<span>Mini Me-Mao</span>
+		</a>
+		{#if steamUrl}
+			<a href={steamUrl} target="_blank" rel="noreferrer" class="mm-nav-badge">
+				<IconExternalLink class="h-3.5 w-3.5" />
+				Steam page
+			</a>
+		{:else}
+			<span class="mm-nav-badge">
+				<IconSparkle class="h-3.5 w-3.5" />
+				Steam page
+			</span>
+		{/if}
+	</nav>
+
 	<!-- Header -->
 	<header class="mm-pk-hero">
 		<picture>
@@ -222,7 +259,7 @@
 			<p class="mm-pk-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas mm-pk-hero-ctas">
 				<a href="#video" class="mm-btn mm-btn-primary">
-					<IconFilm class="h-4 w-4" />
+					<IconPlay class="h-4 w-4" />
 					Watch the trailer
 				</a>
 				<a href="mailto:press@sleepingrobotgames.com" class="mm-btn mm-btn-ghost">
@@ -286,45 +323,38 @@
 		<section class="mm-section" id="video">
 			<h2 class="mm-h2">Video</h2>
 			<p class="mm-section-sub">
-				The announcement trailer is still in production. Email
-				<a href="mailto:press@sleepingrobotgames.com">press@sleepingrobotgames.com</a> and we’ll send
-				it over the moment it’s ready.
+				Cleared for use in videos, streams, and social posts. Horizontal and vertical cuts are both
+				in the download.
 			</p>
-			<div class="mm-video-grid">
-				<figure class="mm-video">
-					<div class="mm-placeholder mm-placeholder-wide">
-						<IconFilm class="h-7 w-7" />
-						<p class="mm-placeholder-title">Coming soon</p>
-					</div>
-					<figcaption>
-						<span class="mm-asset-name">Trailer, horizontal</span>
-						<span class="mm-asset-meta">16:9 · 1920×1080</span>
-					</figcaption>
-				</figure>
-				<figure class="mm-video">
-					<div class="mm-placeholder mm-placeholder-tall">
-						<IconSmartphone class="h-7 w-7" />
-						<p class="mm-placeholder-title">Coming soon</p>
-					</div>
-					<figcaption>
-						<span class="mm-asset-name">Trailer, vertical</span>
-						<span class="mm-asset-meta">9:16 · 1080×1920</span>
-					</figcaption>
-				</figure>
-			</div>
-			{#if trailerZip}
-				<a class="mm-btn mm-btn-zip" href={trailerZip} download>
-					<IconFolderDown class="h-4 w-4" />
-					Download all trailers
-					<span class="mm-zip-meta">{trailerZipMeta}</span>
-				</a>
-			{:else}
-				<span class="mm-btn mm-btn-zip mm-btn-zip-off" aria-disabled="true">
-					<IconFolderDown class="h-4 w-4" />
-					Download all trailers
-					<span class="mm-zip-meta">Available once the trailer lands</span>
-				</span>
-			{/if}
+			<figure class="mm-video">
+				<div class="mm-video-thumb mm-placeholder-wide">
+					{#if playing}
+						<iframe
+							src="https://www.youtube-nocookie.com/embed/{trailerId}?autoplay=1&rel=0"
+							title="Mini Me-Mao announcement trailer"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					{:else}
+						<button type="button" class="mm-video-btn" onclick={() => (playing = true)}>
+							<img src="{PK}/itchcapsule.jpg" alt="" aria-hidden="true" />
+							<span class="mm-video-play"><IconPlay class="h-6 w-6" /></span>
+							<span class="mm-sr-only">Play the Mini Me-Mao announcement trailer</span>
+						</button>
+					{/if}
+				</div>
+				<figcaption class="mm-video-caption">
+					<span class="mm-asset-name">Announcement trailer</span>
+					<span class="mm-asset-meta">
+						Horizontal 1920×1080 and vertical 1080×1920 included in the download
+					</span>
+				</figcaption>
+			</figure>
+			<a class="mm-btn mm-btn-zip" href={trailerZip} target="_blank" rel="noreferrer">
+				<IconFolderDown class="h-4 w-4" />
+				Download the trailers
+				<span class="mm-zip-meta">{trailerZipMeta}</span>
+			</a>
 		</section>
 
 		<!-- Assets -->
@@ -334,6 +364,11 @@
 				Right-click and save, or use the download link under each file. Everything here is cleared
 				for coverage.
 			</p>
+			<a class="mm-btn mm-btn-zip" href={driveMirror} target="_blank" rel="noreferrer">
+				<IconFolderDown class="h-4 w-4" />
+				Download everything
+				<span class="mm-zip-meta">Google Drive mirror</span>
+			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Key art</h3>
 			<div class="mm-asset-grid">
@@ -523,8 +558,71 @@
 	.mm-h2,
 	.mm-h3,
 	.mm-pk-hero-tagline,
+	.mm-nav-back span,
 	:global(.mm-btn) {
 		font-family: 'Baloo 2 Variable', sans-serif;
+	}
+
+	/* Nav */
+	.mm-nav {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.85rem 1.25rem;
+		background: rgba(32, 19, 32, 0.75);
+		backdrop-filter: blur(8px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.mm-nav-back {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		color: var(--mm-cream);
+		font-weight: 600;
+		font-size: 0.95rem;
+		text-decoration: none;
+		opacity: 0.9;
+	}
+	.mm-nav-back:hover {
+		opacity: 1;
+		color: var(--mm-pink-soft);
+	}
+
+	.mm-nav-badge {
+		display: inline-flex;
+		text-decoration: none;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		color: var(--mm-bg);
+		background: var(--mm-gold);
+		padding: 0.35rem 0.7rem;
+		border-radius: 999px;
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+
+	@media (max-width: 480px) {
+		.mm-nav {
+			padding: 0.65rem 0.85rem;
+		}
+		.mm-nav-back {
+			font-size: 0.8rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.mm-nav-badge {
+			font-size: 0.68rem;
+			padding: 0.3rem 0.55rem;
+		}
 	}
 
 	/* Hero */
@@ -918,74 +1016,93 @@
 	}
 
 	/* Video placeholder */
-	.mm-video-grid {
-		margin: 2rem auto 0;
-		max-width: 900px;
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
-		justify-items: center;
-	}
-
-	@media (min-width: 700px) {
-		.mm-video-grid {
-			grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-			align-items: center;
-			justify-items: stretch;
-		}
-	}
-
 	.mm-video {
-		margin: 0;
+		margin: 2rem auto 0;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		max-width: 380px;
+		max-width: 860px;
 	}
 
-	@media (min-width: 700px) {
-		.mm-video {
-			max-width: none;
-		}
-	}
-
-	.mm-video figcaption {
+	.mm-video-caption {
 		display: flex;
 		flex-direction: column;
 		gap: 0.15rem;
 		padding-top: 0.7rem;
+		text-align: center;
 	}
 
 	.mm-placeholder-wide {
 		aspect-ratio: 16 / 9;
 	}
 
-	.mm-placeholder-tall {
-		aspect-ratio: 9 / 16;
+	.mm-video-thumb {
+		position: relative;
+		display: block;
+		width: 100%;
+		isolation: isolate;
+		border-radius: 20px;
+		overflow: hidden;
+		background: var(--mm-panel);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 	}
 
-	.mm-placeholder {
-		margin: 0;
+	.mm-video-thumb iframe {
 		width: 100%;
-		display: flex;
-		flex-direction: column;
+		height: 100%;
+		border: 0;
+		display: block;
+	}
+
+	.mm-video-btn {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+	}
+
+	.mm-sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.mm-video-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.mm-video-play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		text-align: center;
-		gap: 0.35rem;
-		background: var(--mm-panel);
-		border: 1px dashed rgba(255, 255, 255, 0.18);
-		border-radius: 20px;
-		padding: 2.25rem 1.5rem;
-		color: var(--mm-pink-soft);
+		width: 62px;
+		height: 62px;
+		padding-left: 4px;
+		border-radius: 999px;
+		background: var(--mm-pink);
+		color: #fff;
+		box-shadow: 0 10px 28px rgba(255, 63, 174, 0.45);
 	}
 
-	.mm-placeholder-title {
-		font-family: 'Baloo 2 Variable', sans-serif;
-		font-weight: 700;
-		font-size: 1.1rem;
-		color: var(--mm-cream);
-		margin: 0.4rem 0 0;
+	.mm-video-btn:hover .mm-video-play {
+		background: #ff5cbb;
 	}
 
 	/* Assets */

@@ -9,6 +9,7 @@
 	import IconGift from 'lucide-svelte/icons/gift';
 	import IconSparkle from 'lucide-svelte/icons/sparkle';
 	import IconPlay from 'lucide-svelte/icons/play';
+	import IconNewspaper from 'lucide-svelte/icons/newspaper';
 	import IconSparkles from 'lucide-svelte/icons/sparkles';
 	import IconMail from 'lucide-svelte/icons/mail';
 	import IconHeart from 'lucide-svelte/icons/heart';
@@ -59,8 +60,14 @@
 		}
 	];
 
-	// Paste the YouTube video id here to swap the poster for the real embed.
-	const trailerId = '';
+	// TODO: swap in the real YouTube id before deploying.
+	const trailerId = 'REPLACE_ME';
+
+	// The embed only loads once the visitor clicks play.
+	let playing = $state(false);
+
+	// TODO: replace with the real Steam app id before deploying.
+	const steamUrl = 'https://store.steampowered.com/app/0000000/Mini_MeMao/';
 
 	const screenshots = [
 		{
@@ -116,10 +123,10 @@
 			<IconArrowLeft class="h-4 w-4" />
 			<span>Sleeping Robot Games</span>
 		</a>
-		<span class="mm-nav-badge">
+		<a href={steamUrl} target="_blank" rel="noreferrer" class="mm-nav-badge">
 			<IconSparkle class="h-3.5 w-3.5" />
-			Coming soon to Steam
-		</span>
+			Wishlist on Steam
+		</a>
 	</nav>
 
 	<!-- Hero -->
@@ -139,16 +146,21 @@
 			/>
 			<p class="mm-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas">
+				<a href={steamUrl} target="_blank" rel="noreferrer" class="mm-btn mm-btn-primary">
+					<IconSparkles class="h-4 w-4" />
+					Wishlist on Steam
+				</a>
 				<a
 					href="https://sleeping-robot-games.itch.io/mini-me-mao"
 					target="_blank"
-					class="mm-btn mm-btn-primary"
+					rel="noreferrer"
+					class="mm-btn mm-btn-ghost"
 				>
-					<IconSparkles class="h-4 w-4" />
-					Playtest on Itch.io
+					Play the demo
 				</a>
-				<a href="https://linktr.ee/SleepingRobotGames" target="_blank" class="mm-btn mm-btn-ghost">
-					Follow for updates
+				<a href="/mini-me-mao/press-kit" class="mm-btn mm-btn-ghost">
+					<IconNewspaper class="h-4 w-4" />
+					Press Kit
 				</a>
 			</div>
 		</div>
@@ -168,23 +180,21 @@
 		<section class="mm-section mm-trailer-section" id="trailer">
 			<h2 class="mm-h2">Watch the trailer</h2>
 			<div class="mm-trailer">
-				{#if trailerId}
+				{#if playing}
 					<iframe
-						src="https://www.youtube-nocookie.com/embed/{trailerId}"
+						src="https://www.youtube-nocookie.com/embed/{trailerId}?autoplay=1&rel=0"
 						title="Mini Me-Mao announcement trailer"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen
 					></iframe>
 				{:else}
-					<img
-						src="{PK}/itchcapsule.jpg"
-						alt="Mini Me-Mao key art, standing in for the trailer while it finishes uploading"
-						class="mm-trailer-poster"
-					/>
-					<div class="mm-trailer-overlay">
-						<span class="mm-trailer-play"><IconPlay class="h-7 w-7" /></span>
-						<span class="mm-trailer-note">Trailer dropping soon</span>
-					</div>
+					<button type="button" class="mm-trailer-btn" onclick={() => (playing = true)}>
+						<img src="{PK}/itchcapsule.jpg" alt="" aria-hidden="true" class="mm-trailer-poster" />
+						<span class="mm-trailer-overlay">
+							<span class="mm-trailer-play"><IconPlay class="h-7 w-7" /></span>
+						</span>
+						<span class="mm-sr-only">Play the Mini Me-Mao announcement trailer</span>
+					</button>
 				{/if}
 			</div>
 		</section>
@@ -347,6 +357,7 @@
 		letter-spacing: 0.02em;
 		color: var(--mm-bg);
 		background: var(--mm-gold);
+		text-decoration: none;
 		padding: 0.35rem 0.7rem;
 		border-radius: 999px;
 		white-space: nowrap;
@@ -604,6 +615,7 @@
 
 	.mm-trailer {
 		position: relative;
+		display: block;
 		margin: 1.75rem auto 0;
 		max-width: 900px;
 		aspect-ratio: 16 / 9;
@@ -621,6 +633,28 @@
 		display: block;
 	}
 
+	.mm-trailer-btn {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+	}
+
+	.mm-sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	.mm-trailer-poster {
 		width: 100%;
 		height: 100%;
@@ -632,11 +666,14 @@
 		position: absolute;
 		inset: 0;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1.1rem;
-		background: rgba(20, 10, 20, 0.58);
+		background: rgba(20, 10, 20, 0.4);
+		transition: background 0.2s ease;
+	}
+
+	.mm-trailer-btn:hover .mm-trailer-overlay {
+		background: rgba(20, 10, 20, 0.28);
 	}
 
 	.mm-trailer-play {
@@ -650,14 +687,6 @@
 		color: #fff;
 		padding-left: 4px;
 		box-shadow: 0 10px 30px rgba(255, 63, 174, 0.45);
-	}
-
-	.mm-trailer-note {
-		font-family: 'Baloo 2 Variable', sans-serif;
-		font-weight: 700;
-		font-size: 1rem;
-		color: var(--mm-cream);
-		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 	}
 
 	/* Gallery */
