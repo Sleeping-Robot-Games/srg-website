@@ -235,6 +235,9 @@
 			<a href="/" class="mm-footer-link">← Back to Sleeping Robot Games</a>
 		</p>
 		<p>
+			Press and creators: <a href="/mini-me-mao/press-kit" class="mm-footer-link">Press Kit</a>
+		</p>
+		<p>
 			Also check out our other game, <a href="/smokin-potions" class="mm-footer-link"
 				>Smokin Potions</a
 			>
