@@ -1,4 +1,6 @@
 <script>
+	const PK = '/images/mini-me-mao/presskit';
+
 	import IconArrowLeft from 'lucide-svelte/icons/arrow-left';
 	import IconShirt from 'lucide-svelte/icons/shirt';
 	import IconPaintbrush from 'lucide-svelte/icons/paintbrush';
@@ -6,6 +8,7 @@
 	import IconPalette from 'lucide-svelte/icons/palette';
 	import IconGift from 'lucide-svelte/icons/gift';
 	import IconSparkle from 'lucide-svelte/icons/sparkle';
+	import IconPlay from 'lucide-svelte/icons/play';
 	import IconSparkles from 'lucide-svelte/icons/sparkles';
 	import IconMail from 'lucide-svelte/icons/mail';
 	import IconHeart from 'lucide-svelte/icons/heart';
@@ -21,8 +24,8 @@
 		},
 		{
 			icon: IconStore,
-			title: 'New stock every day',
-			body: 'Browse a shop that rotates with daily deals across furniture, decor, dress up styles, and more.'
+			title: 'New stock twice a day',
+			body: 'Browse a shop that rotates with deals twice a day across furniture, decor, apparel, and more.'
 		},
 		{
 			icon: IconShirt,
@@ -56,6 +59,28 @@
 		}
 	];
 
+	// Paste the YouTube video id here to swap the poster for the real embed.
+	const trailerId = '';
+
+	const screenshots = [
+		{
+			src: `${PK}/screenshot1.png`,
+			alt: 'A pixel art dollhouse room with a kitchen, bed, bonsai, and the mini painting at an easel'
+		},
+		{
+			src: `${PK}/screenshot3.png`,
+			alt: 'The in-game shop showing decorations for sale, including a grandfather clock and a fish bowl'
+		},
+		{
+			src: `${PK}/screenshot4.png`,
+			alt: 'A dollhouse room with finished paintings hung in gold frames along the wall'
+		},
+		{
+			src: `${PK}/screenshot5.png`,
+			alt: 'The character dress-up screen with hairstyle, outfit, and skin tone options'
+		}
+	];
+
 	const paintingStyles = [
 		{ name: 'Doodles', img: '/images/mini-me-mao/paintings/doodles.png' },
 		{ name: 'Miniature', img: '/images/mini-me-mao/paintings/miniature.png' },
@@ -80,7 +105,7 @@
 	/>
 	<meta
 		property="og:image"
-		content="https://sleepingrobotgames.com/images/mini-memao-capsule.png"
+		content="https://sleepingrobotgames.com/images/mini-me-mao/presskit/maincapsule.jpg"
 	/>
 </svelte:head>
 
@@ -100,14 +125,18 @@
 	<!-- Hero -->
 	<header class="mm-hero">
 		<img
-			src="/images/mini-memao-capsule-no-logo.png"
+			src="/images/mini-me-mao/presskit/libraryhero.jpg"
 			alt=""
 			class="mm-hero-bg"
 			aria-hidden="true"
 		/>
 		<div class="mm-hero-scrim"></div>
 		<div class="mm-hero-content">
-			<img src="/images/mini-memao-logo.png" alt="Mini Me-Mao" class="mm-hero-logo" />
+			<img
+				src="/images/mini-me-mao/presskit/Mini_Memao_Title.png"
+				alt="Mini Me-Mao"
+				class="mm-hero-logo"
+			/>
 			<p class="mm-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas">
 				<a
@@ -133,6 +162,31 @@
 				work or play. Sell their art for gold, unlock new painting styles, and cultivate the perfect
 				mix of decorations and cozy details.
 			</p>
+		</section>
+
+		<!-- Trailer -->
+		<section class="mm-section mm-trailer-section" id="trailer">
+			<h2 class="mm-h2">Watch the trailer</h2>
+			<div class="mm-trailer">
+				{#if trailerId}
+					<iframe
+						src="https://www.youtube-nocookie.com/embed/{trailerId}"
+						title="Mini Me-Mao announcement trailer"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				{:else}
+					<img
+						src="{PK}/itchcapsule.jpg"
+						alt="Mini Me-Mao key art, standing in for the trailer while it finishes uploading"
+						class="mm-trailer-poster"
+					/>
+					<div class="mm-trailer-overlay">
+						<span class="mm-trailer-play"><IconPlay class="h-7 w-7" /></span>
+						<span class="mm-trailer-note">Trailer dropping soon</span>
+					</div>
+				{/if}
+			</div>
 		</section>
 
 		<!-- Features -->
@@ -171,38 +225,15 @@
 
 		<!-- Gallery -->
 		<section class="mm-section mm-gallery-section">
-			<h2 class="mm-h2">A peek inside</h2>
-			<div class="mm-gallery">
-				<img
-					src="/images/mini-memao-capsule.png"
-					alt="Mini Me-Mao capsule art: a mini painter at their easel in a cozy, plant-filled room"
-					class="mm-gallery-img"
-				/>
-			</div>
+			<h2 class="mm-h2">Screenshots</h2>
 			<div class="mm-gallery-grid">
-				<figure class="mm-shot">
-					<div class="mm-shot-frame">
-						<img
-							src="/images/mini-me-mao/pixel-capsule-style.gif"
-							alt="Animated pixel art of a Mini Me-Mao bedroom: a fish tank, grandfather clock, bonsai, bookshelf, and a mini standing on the rug"
-						/>
-					</div>
-					<figcaption class="mm-gallery-caption">
-						Create a cozy pixel art room for your mini artist
-					</figcaption>
-				</figure>
-				<figure class="mm-shot">
-					<div class="mm-shot-frame">
-						<img
-							src="/images/mini-me-mao/screenshot.png"
-							alt="The Mini Me-Mao window sitting on a Windows desktop, floating above the taskbar"
-							class="mm-shot-pixel"
-						/>
-					</div>
-					<figcaption class="mm-gallery-caption">
-						It sits right on your desktop, staying on top while you work.
-					</figcaption>
-				</figure>
+				{#each screenshots as shot}
+					<figure class="mm-shot">
+						<div class="mm-shot-frame">
+							<img src={shot.src} alt={shot.alt} />
+						</div>
+					</figure>
+				{/each}
 			</div>
 		</section>
 
@@ -343,7 +374,7 @@
 		position: relative;
 		display: flex;
 		align-items: flex-end;
-		min-height: min(88vh, 780px);
+		min-height: min(72vh, 620px);
 		overflow: hidden;
 	}
 
@@ -353,7 +384,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: 60% 50%;
+		object-position: 62% 38%;
 	}
 
 	.mm-hero-scrim {
@@ -566,36 +597,86 @@
 		color: var(--mm-cream-dim);
 	}
 
+	/* Trailer */
+	.mm-trailer-section {
+		text-align: center;
+	}
+
+	.mm-trailer {
+		position: relative;
+		margin: 1.75rem auto 0;
+		max-width: 900px;
+		aspect-ratio: 16 / 9;
+		border-radius: 20px;
+		overflow: hidden;
+		background: var(--mm-panel);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+	}
+
+	.mm-trailer iframe {
+		width: 100%;
+		height: 100%;
+		border: 0;
+		display: block;
+	}
+
+	.mm-trailer-poster {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.mm-trailer-overlay {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.1rem;
+		background: rgba(20, 10, 20, 0.58);
+	}
+
+	.mm-trailer-play {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 74px;
+		height: 74px;
+		border-radius: 999px;
+		background: var(--mm-pink);
+		color: #fff;
+		padding-left: 4px;
+		box-shadow: 0 10px 30px rgba(255, 63, 174, 0.45);
+	}
+
+	.mm-trailer-note {
+		font-family: 'Baloo 2 Variable', sans-serif;
+		font-weight: 700;
+		font-size: 1rem;
+		color: var(--mm-cream);
+		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+	}
+
 	/* Gallery */
 	.mm-gallery-section {
 		text-align: center;
 	}
 
-	.mm-gallery {
-		margin-top: 1.5rem;
-		border-radius: 24px;
-		overflow: hidden;
-		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-	}
-
-	.mm-gallery-img {
-		display: block;
-		width: 100%;
-		height: auto;
-	}
-
-	.mm-gallery-caption {
-		margin-top: 1rem;
-		color: var(--mm-cream-dim);
-		font-size: 0.95rem;
-	}
-
 	.mm-gallery-grid {
 		margin-top: 1.5rem;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: 1fr;
 		gap: 1.5rem;
 		align-items: start;
+	}
+
+	@media (min-width: 760px) {
+		.mm-gallery-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
 	}
 
 	.mm-shot {
@@ -611,7 +692,7 @@
 		border-radius: 20px;
 		overflow: hidden;
 		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-		aspect-ratio: 4 / 3;
+		aspect-ratio: 16 / 9;
 	}
 
 	.mm-shot-frame img {
@@ -621,18 +702,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	.mm-shot-frame .mm-shot-pixel {
-		image-rendering: pixelated;
-		width: auto;
-		height: 100%;
-		object-fit: contain;
-	}
-
-	.mm-gallery-grid .mm-gallery-caption {
-		margin-top: 0.75rem;
-		font-size: 0.9rem;
 	}
 
 	/* Follow */

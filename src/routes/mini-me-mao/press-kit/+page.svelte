@@ -1,39 +1,43 @@
 <script>
-	import IconArrowLeft from 'lucide-svelte/icons/arrow-left';
 	import IconMail from 'lucide-svelte/icons/mail';
 	import IconDownload from 'lucide-svelte/icons/download';
+	import IconFolderDown from 'lucide-svelte/icons/folder-down';
 	import IconInfo from 'lucide-svelte/icons/info';
 	import IconFilm from 'lucide-svelte/icons/film';
-	import IconNewspaper from 'lucide-svelte/icons/newspaper';
+	import IconSmartphone from 'lucide-svelte/icons/smartphone';
+	import IconCheck from 'lucide-svelte/icons/check';
 
 	const factsheet = [
 		{ label: 'Developer', value: 'Sleeping Robot Games' },
-		{ label: 'Location', value: '[City, Country]', todo: true },
-		{ label: 'Genre', value: 'Cozy desktop companion / idle dollhouse' },
-		{ label: 'Platform', value: 'PC via Steam' },
+		{ label: 'Genre', value: 'Cozy / Desktop Companion / Idle' },
+		{ label: 'Platform', value: 'PC (Windows, macOS, Linux)' },
 		{ label: 'Release window', value: '[Release window]', todo: true },
 		{
 			label: 'Press contact',
-			value: 'support@sleepingrobotgames.com',
-			href: 'mailto:support@sleepingrobotgames.com'
-		},
-		{
-			label: 'Playtest',
-			value: 'sleeping-robot-games.itch.io/mini-me-mao',
-			href: 'https://sleeping-robot-games.itch.io/mini-me-mao'
+			value: 'press@sleepingrobotgames.com',
+			href: 'mailto:press@sleepingrobotgames.com'
 		},
 		{ label: 'Steam page', value: '[Steam page link]', todo: true }
 	];
 
 	const features = [
-		'A desktop companion that sits right on your screen. Drag it anywhere and it stays on top while you work, study, or play.',
-		'Your mini paints on their own in the background, even when you’re in another app entirely. Check in whenever you like and collect what they’ve finished.',
-		'Every finished canvas rolls a star rating and a price. Sell it in the gallery, then spend the gold on new furniture and decor.',
-		'Six painting styles to unlock, from simple Doodles to intricate Master works, as your mini’s skill grows.',
-		'A shop that restocks daily with rotating deals on furniture, decor, and dress up styles.',
-		'Dress up your mini and watch the look carry through everything they do, from the easel to their room.',
-		'A well-decorated room keeps your mini inspired at the canvas, so collecting is more than just cute.',
-		'No timers, no pressure. Every menu is player-driven, so your dollhouse grows exactly as fast as you want it to.'
+		'A desktop companion you can place anywhere and have run in the background',
+		'Idle painting: your mini creates art while you work or play on other tasks',
+		'Sell finished paintings for gold in the gallery, then shop daily deals for 150+ decorations across furniture, wallpaper, flooring, and knick-knacks',
+		'Dress up your mini with a wide array of outfits, for over 135 trillion possible character combinations',
+		"Unlockable painting styles, each improving in quality as your mini's skill grows — collect every star rating to master a painting and unlock it as a decoration for your room"
+	];
+
+	const roadmap = [
+		{ name: 'Style Shop', done: true },
+		{ name: 'Wardrobe, with outfits you can equip for any occasion', done: true },
+		{ name: 'Minimize game window', done: true },
+		{ name: 'Creativity and Charisma skills', done: false },
+		{ name: 'Pets', done: false },
+		{ name: 'Multiple rooms', done: false },
+		{ name: 'Roommates', done: false },
+		{ name: 'Create your own pixel art masterpieces', done: false },
+		{ name: 'Multiplayer snail mail system', done: false }
 	];
 
 	const PK = '/images/mini-me-mao/presskit';
@@ -158,26 +162,13 @@
 		}
 	];
 
-	const paintingStyles = [
-		{ name: 'Doodles', img: '/images/mini-me-mao/paintings/doodles.png' },
-		{ name: 'Miniature', img: '/images/mini-me-mao/paintings/miniature.png' },
-		{ name: 'Landscape', img: '/images/mini-me-mao/paintings/landscape.png' },
-		{ name: 'Pop', img: '/images/mini-me-mao/paintings/pop.png' },
-		{ name: 'Memao', img: '/images/mini-me-mao/paintings/memao.png' },
-		{ name: 'Master', img: '/images/mini-me-mao/paintings/master.png' }
-	];
-
 	const contacts = [
 		{
 			label: 'Email',
-			value: 'support@sleepingrobotgames.com',
-			href: 'mailto:support@sleepingrobotgames.com'
+			value: 'press@sleepingrobotgames.com',
+			href: 'mailto:press@sleepingrobotgames.com'
 		},
-		{
-			label: 'Bluesky',
-			value: '@bronskydev.bsky.social',
-			href: 'https://bsky.app/profile/bronskydev.bsky.social'
-		},
+		{ label: 'Discord', value: 'discord.gg/zAxUhJ4F2H', href: 'https://discord.gg/zAxUhJ4F2H' },
 		{
 			label: 'Links',
 			value: 'linktr.ee/SleepingRobotGames',
@@ -190,7 +181,7 @@
 	<title>Mini Me-Mao Press Kit | Sleeping Robot Games</title>
 	<meta
 		name="description"
-		content="Press kit for Mini Me-Mao, a cozy desktop dollhouse from Sleeping Robot Games. Factsheet, descriptions, key art, screenshots, logos, and press contact."
+		content="Press kit for Mini Me-Mao, a cozy desktop companion from Sleeping Robot Games. Factsheet, descriptions, key art, screenshots, logos, and press contact."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Mini Me-Mao Press Kit" />
@@ -205,107 +196,117 @@
 </svelte:head>
 
 <div class="mm-page">
-	<!-- Nav -->
-	<nav class="mm-nav">
-		<a href="/mini-me-mao" class="mm-nav-back">
-			<IconArrowLeft class="h-4 w-4" />
-			<span>Mini Me-Mao</span>
-		</a>
-		<span class="mm-nav-badge">
-			<IconNewspaper class="h-3.5 w-3.5" />
-			Press Kit
-		</span>
-	</nav>
-
 	<!-- Header -->
 	<header class="mm-pk-hero">
-		<img
-			src="/images/mini-me-mao/presskit/Mini_Memao_Title.png"
-			alt="Mini Me-Mao"
-			class="mm-pk-hero-logo"
-		/>
-		<p class="mm-pk-eyebrow">Press Kit</p>
-		<p class="mm-pk-hero-tagline">A tiny companion that lives right on your desktop</p>
-		<div class="mm-hero-ctas mm-pk-hero-ctas">
-			<a href="#assets" class="mm-btn mm-btn-primary">
-				<IconDownload class="h-4 w-4" />
-				Jump to assets
-			</a>
-			<a href="mailto:support@sleepingrobotgames.com" class="mm-btn mm-btn-ghost">
-				<IconMail class="h-4 w-4" />
-				Press contact
-			</a>
+		<picture>
+			<source media="(min-width: 700px)" srcset="/images/mini-me-mao/presskit/libraryhero.jpg" />
+			<img
+				src="/images/mini-me-mao/presskit/itchcapsule.jpg"
+				alt=""
+				class="mm-pk-hero-bg"
+				aria-hidden="true"
+			/>
+		</picture>
+		<div class="mm-pk-hero-scrim"></div>
+		<div class="mm-pk-hero-content">
+			<img
+				src="/images/mini-me-mao/presskit/Mini_Memao_Title.png"
+				alt="Mini Me-Mao"
+				class="mm-pk-hero-logo"
+			/>
+			<p class="mm-pk-eyebrow">Press Kit</p>
+			<p class="mm-pk-hero-tagline">A tiny companion that lives right on your desktop</p>
+			<div class="mm-hero-ctas mm-pk-hero-ctas">
+				<a href="#video" class="mm-btn mm-btn-primary">
+					<IconFilm class="h-4 w-4" />
+					Watch the trailer
+				</a>
+				<a href="mailto:press@sleepingrobotgames.com" class="mm-btn mm-btn-ghost">
+					<IconMail class="h-4 w-4" />
+					Press contact
+				</a>
+			</div>
 		</div>
 	</header>
 
 	<main>
-		<!-- Factsheet -->
-		<section class="mm-section" id="factsheet">
-			<h2 class="mm-h2">Factsheet</h2>
-			<dl class="mm-facts">
-				{#each factsheet as f}
-					<div class="mm-fact">
-						<dt>{f.label}</dt>
-						<dd>
-							{#if f.href}
-								<a href={f.href} target={f.href.startsWith('mailto:') ? null : '_blank'}
-									>{f.value}</a
-								>
-							{:else if f.todo}
-								<span class="mm-todo">{f.value}</span>
-							{:else}
-								{f.value}
-							{/if}
-						</dd>
+		<!-- Overview: factsheet + copy -->
+		<section class="mm-section mm-overview" id="factsheet">
+			<aside class="mm-overview-side">
+				<h2 class="mm-h2 mm-h2-left">Factsheet</h2>
+				<dl class="mm-facts mm-facts-compact">
+					{#each factsheet as f}
+						<div class="mm-fact">
+							<dt>{f.label}</dt>
+							<dd>
+								{#if f.href}
+									<a href={f.href} target={f.href.startsWith('mailto:') ? null : '_blank'}
+										>{f.value}</a
+									>
+								{:else if f.todo}
+									<span class="mm-todo">{f.value}</span>
+								{:else}
+									{f.value}
+								{/if}
+							</dd>
+						</div>
+					{/each}
+				</dl>
+			</aside>
+
+			<div class="mm-overview-main">
+				<div id="description" class="mm-copy">
+					<h2 class="mm-h2 mm-h2-left">Description</h2>
+					<p class="mm-quote">
+						A mini companion that lives right on your desktop! Unpack and decorate a cozy desktop
+						dollhouse, dress up your mini, and watch them paint while you work or play. Sell their
+						art for gold, unlock new painting styles, collect charming decorations, and create the
+						perfect space that grows with you.
+					</p>
+				</div>
+
+				<div id="features">
+					<h2 class="mm-h2 mm-h2-left">Features</h2>
+					<div class="mm-quote">
+						<ul class="mm-bullets">
+							{#each features as f}
+								<li>{f}</li>
+							{/each}
+						</ul>
 					</div>
-				{/each}
-			</dl>
-		</section>
-
-		<!-- Description -->
-		<section class="mm-section" id="description">
-			<h2 class="mm-h2">Description</h2>
-			<div class="mm-copy">
-				<h3 class="mm-h3">Short</h3>
-				<p class="mm-quote">
-					Mini Me-Mao is a cozy desktop dollhouse. Unpack and decorate a tiny home, dress up your
-					mini, and watch them paint while you work or play.
-				</p>
-
-				<h3 class="mm-h3">Full</h3>
-				<p class="mm-quote">
-					Mini Me-Mao is a cozy desktop dollhouse that lives on top of your screen. Unpack and
-					decorate a tiny home, dress up your mini, and watch them paint away while you work, study,
-					or play something else entirely. Every finished canvas rolls a star rating and a price, so
-					you can sell it in the gallery and spend the gold on new furniture and decor, which in
-					turn keeps your mini inspired at the easel. Level up their skill to unlock six painting
-					styles, from simple Doodles to intricate Master works. There are no timers and no
-					pressure. Your dollhouse grows exactly as fast as you want it to.
-				</p>
+				</div>
 			</div>
-		</section>
-
-		<!-- Features -->
-		<section class="mm-section" id="features">
-			<h2 class="mm-h2">Features</h2>
-			<ul class="mm-bullets">
-				{#each features as f}
-					<li>{f}</li>
-				{/each}
-			</ul>
 		</section>
 
 		<!-- Video -->
 		<section class="mm-section" id="video">
 			<h2 class="mm-h2">Video</h2>
-			<div class="mm-placeholder">
-				<IconFilm class="h-7 w-7" />
-				<p class="mm-placeholder-title">Trailer coming soon</p>
-				<p class="mm-placeholder-body">
-					The announcement trailer is still in production. Email
-					<a href="mailto:support@sleepingrobotgames.com">support@sleepingrobotgames.com</a> and we’ll
-					send it over the moment it’s ready.
-				</p>
+			<p class="mm-section-sub">
+				The announcement trailer is still in production. Email
+				<a href="mailto:press@sleepingrobotgames.com">press@sleepingrobotgames.com</a> and we’ll send
+				it over the moment it’s ready.
+			</p>
+			<div class="mm-video-grid">
+				<figure class="mm-video">
+					<div class="mm-placeholder mm-placeholder-wide">
+						<IconFilm class="h-7 w-7" />
+						<p class="mm-placeholder-title">Coming soon</p>
+					</div>
+					<figcaption>
+						<span class="mm-asset-name">Trailer, horizontal</span>
+						<span class="mm-asset-meta">16:9 · 1920×1080</span>
+					</figcaption>
+				</figure>
+				<figure class="mm-video">
+					<div class="mm-placeholder mm-placeholder-tall">
+						<IconSmartphone class="h-7 w-7" />
+						<p class="mm-placeholder-title">Coming soon</p>
+					</div>
+					<figcaption>
+						<span class="mm-asset-name">Trailer, vertical</span>
+						<span class="mm-asset-meta">9:16 · 1080×1920</span>
+					</figcaption>
+				</figure>
 			</div>
 		</section>
 
@@ -335,6 +336,11 @@
 					</figure>
 				{/each}
 			</div>
+			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-key-art.zip" download>
+				<IconFolderDown class="h-4 w-4" />
+				Download all key art
+				<span class="mm-zip-meta">ZIP · 7.8 MB</span>
+			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Screenshots</h3>
 			<div class="mm-asset-grid">
@@ -354,6 +360,11 @@
 					</figure>
 				{/each}
 			</div>
+			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-screenshots.zip" download>
+				<IconFolderDown class="h-4 w-4" />
+				Download all screenshots
+				<span class="mm-zip-meta">ZIP · 7.5 MB</span>
+			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Logo</h3>
 			<div class="mm-asset-grid">
@@ -373,6 +384,11 @@
 					</figure>
 				{/each}
 			</div>
+			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-logos.zip" download>
+				<IconFolderDown class="h-4 w-4" />
+				Download all logos
+				<span class="mm-zip-meta">ZIP · 1.8 MB</span>
+			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Character animations</h3>
 			<div class="mm-asset-grid mm-asset-grid-anim">
@@ -392,27 +408,30 @@
 					</figure>
 				{/each}
 			</div>
-
-			<h3 class="mm-h3 mm-h3-group">Painting styles</h3>
-			<div class="mm-styles-row">
-				{#each paintingStyles as s}
-					<a class="mm-style-card" href={s.img} download>
-						<div class="mm-style-frame">
-							<img src={s.img} alt="{s.name} painting style preview" />
-						</div>
-						<span class="mm-style-name">{s.name}</span>
-					</a>
-				{/each}
-			</div>
+			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-animations.zip" download>
+				<IconFolderDown class="h-4 w-4" />
+				Download all animations
+				<span class="mm-zip-meta">ZIP · 68 KB</span>
+			</a>
 		</section>
 
-		<!-- Team -->
-		<section class="mm-section" id="team">
-			<h2 class="mm-h2">Team</h2>
-			<p class="mm-copy-center">
-				Mini Me-Mao is independently developed by Sleeping Robot Games, a small studio making games
-				we want to play. <span class="mm-todo">[Team size and credits]</span>
-			</p>
+		<!-- Roadmap -->
+		<section class="mm-section" id="roadmap">
+			<h2 class="mm-h2">Roadmap</h2>
+			<p class="mm-section-sub">Mini Me-Mao is in active development.</p>
+			<ul class="mm-roadmap">
+				{#each roadmap as r}
+					<li class:mm-road-done={r.done}>
+						{#if r.done}
+							<IconCheck class="mm-road-icon h-4 w-4" />
+						{:else}
+							<span class="mm-road-dot"></span>
+						{/if}
+						<span>{r.name}</span>
+						{#if r.done}<span class="mm-road-tag">Shipped</span>{/if}
+					</li>
+				{/each}
+			</ul>
 		</section>
 
 		<!-- Contact -->
@@ -487,89 +506,68 @@
 	.mm-h2,
 	.mm-h3,
 	.mm-pk-hero-tagline,
-	.mm-nav-back span,
 	:global(.mm-btn) {
 		font-family: 'Baloo 2 Variable', sans-serif;
 	}
 
-	/* Nav */
-	.mm-nav {
-		position: sticky;
-		top: 0;
-		z-index: 20;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-		padding: 0.85rem 1.25rem;
-		background: rgba(32, 19, 32, 0.75);
-		backdrop-filter: blur(8px);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-	}
-
-	.mm-nav-back {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		color: var(--mm-cream);
-		font-weight: 600;
-		font-size: 0.95rem;
-		text-decoration: none;
-		opacity: 0.9;
-	}
-	.mm-nav-back:hover {
-		opacity: 1;
-		color: var(--mm-pink-soft);
-	}
-
-	.mm-nav-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-size: 0.75rem;
-		font-weight: 600;
-		letter-spacing: 0.02em;
-		color: var(--mm-bg);
-		background: var(--mm-gold);
-		padding: 0.35rem 0.7rem;
-		border-radius: 999px;
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-
-	@media (max-width: 480px) {
-		.mm-nav {
-			padding: 0.65rem 0.85rem;
-		}
-		.mm-nav-back {
-			font-size: 0.8rem;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.mm-nav-badge {
-			font-size: 0.68rem;
-			padding: 0.3rem 0.55rem;
-		}
-	}
-
 	/* Hero */
 	.mm-pk-hero {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		text-align: center;
-		padding: 2.75rem 1.5rem 2.5rem;
-		background: radial-gradient(circle at 50% 0%, rgba(255, 63, 174, 0.16), transparent 62%),
-			var(--mm-bg-2);
+		min-height: min(62vh, 560px);
+		padding: 3.5rem 1.5rem 3rem;
+		background: var(--mm-bg-2);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		overflow: hidden;
+	}
+
+	.mm-pk-hero picture {
+		position: absolute;
+		inset: 0;
+	}
+
+	.mm-pk-hero-bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 45%;
+	}
+
+	.mm-pk-hero-scrim {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+				180deg,
+				rgba(20, 10, 20, 0.55) 0%,
+				rgba(20, 10, 20, 0.68) 55%,
+				rgba(32, 19, 32, 0.96) 100%
+			),
+			radial-gradient(
+				ellipse 70% 60% at 50% 45%,
+				rgba(20, 10, 20, 0.62),
+				rgba(20, 10, 20, 0.35) 100%
+			);
+	}
+
+	.mm-pk-hero-content {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.mm-pk-hero-logo {
 		width: min(340px, 72vw);
 		height: auto;
 		display: block;
-		filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+		filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.7));
 	}
 
 	.mm-pk-eyebrow {
@@ -584,6 +582,7 @@
 
 	.mm-pk-hero-tagline {
 		margin: 0.5rem 0 1.6rem;
+		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 		font-size: clamp(1.05rem, 2.4vw, 1.35rem);
 		font-weight: 600;
 		color: var(--mm-cream);
@@ -668,6 +667,79 @@
 		font-size: 0.95rem;
 	}
 
+	/* Overview two-column */
+	.mm-overview {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+		align-items: start;
+	}
+
+	@media (min-width: 900px) {
+		.mm-overview {
+			grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+			gap: 3rem;
+		}
+		.mm-overview-side {
+			position: sticky;
+			top: 4.5rem;
+		}
+	}
+
+	.mm-overview-main {
+		display: grid;
+		gap: 2.5rem;
+		min-width: 0;
+	}
+
+	.mm-h2-left {
+		text-align: left;
+		font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+		margin-bottom: 0.9rem;
+	}
+
+	.mm-overview .mm-copy,
+	.mm-overview .mm-bullets {
+		max-width: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.mm-overview .mm-copy {
+		margin-top: 0;
+	}
+
+	.mm-overview .mm-bullets {
+		margin-top: 0;
+	}
+
+	/* Compact factsheet for the side rail */
+	.mm-facts-compact {
+		margin: 0;
+		max-width: none;
+		border-radius: 16px;
+	}
+
+	.mm-facts-compact .mm-fact {
+		grid-template-columns: 1fr;
+		gap: 0.1rem;
+		padding: 0.7rem 1rem;
+	}
+
+	.mm-facts-compact dt {
+		font-size: 0.7rem;
+		letter-spacing: 0.08em;
+	}
+
+	.mm-facts-compact dd {
+		font-size: 0.88rem;
+		line-height: 1.45;
+	}
+
+	.mm-facts-compact .mm-todo {
+		font-size: 0.78rem;
+	}
+
 	/* Factsheet */
 	.mm-facts {
 		margin: 2rem auto 0;
@@ -736,13 +808,6 @@
 		margin: 2rem auto 0;
 	}
 
-	.mm-copy .mm-h3 {
-		margin-top: 1.75rem;
-	}
-	.mm-copy .mm-h3:first-child {
-		margin-top: 0;
-	}
-
 	.mm-quote {
 		margin: 0;
 		background: var(--mm-panel);
@@ -754,51 +819,141 @@
 		font-size: 1rem;
 	}
 
-	.mm-copy-center {
-		max-width: 62ch;
-		margin: 1.5rem auto 0;
-		text-align: center;
-		color: var(--mm-cream-dim);
-	}
-
 	/* Features */
 	.mm-bullets {
-		max-width: 760px;
-		margin: 2rem auto 0;
+		margin: 0;
 		padding: 0;
 		list-style: none;
 		display: grid;
-		gap: 0.75rem;
+		gap: 0.6rem;
 	}
 
 	.mm-bullets li {
 		position: relative;
-		background: var(--mm-panel);
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		border-radius: 14px;
-		padding: 0.85rem 1.1rem 0.85rem 2.4rem;
-		color: var(--mm-cream-dim);
+		padding-left: 1.3rem;
+		color: var(--mm-cream);
 		font-size: 0.95rem;
 	}
 
 	.mm-bullets li::before {
 		content: '';
 		position: absolute;
-		left: 1.1rem;
-		top: 1.35rem;
+		left: 0;
+		top: 0.62rem;
 		width: 7px;
 		height: 7px;
 		border-radius: 999px;
 		background: var(--mm-pink);
 	}
 
-	/* Video placeholder */
-	.mm-placeholder {
-		max-width: 640px;
+	/* Roadmap */
+	.mm-roadmap {
+		max-width: 760px;
 		margin: 2rem auto 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		gap: 0.6rem;
+	}
+
+	.mm-roadmap li {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		background: var(--mm-panel);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		border-radius: 14px;
+		padding: 0.8rem 1.1rem;
+		color: var(--mm-cream);
+		font-size: 0.95rem;
+	}
+
+	.mm-roadmap li.mm-road-done {
+		color: var(--mm-cream-dim);
+	}
+
+	:global(.mm-road-icon) {
+		color: #7ee0a8;
+		flex-shrink: 0;
+	}
+
+	.mm-road-dot {
+		width: 7px;
+		height: 7px;
+		margin: 0 3.5px;
+		border-radius: 999px;
+		background: var(--mm-pink);
+		flex-shrink: 0;
+	}
+
+	.mm-road-tag {
+		margin-left: auto;
+		font-family: 'Baloo 2 Variable', sans-serif;
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: #7ee0a8;
+		background: rgba(126, 224, 168, 0.14);
+		border-radius: 999px;
+		padding: 0.15rem 0.55rem;
+		white-space: nowrap;
+	}
+
+	/* Video placeholder */
+	.mm-video-grid {
+		margin: 2rem auto 0;
+		max-width: 900px;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		justify-items: center;
+	}
+
+	@media (min-width: 700px) {
+		.mm-video-grid {
+			grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+			align-items: center;
+			justify-items: stretch;
+		}
+	}
+
+	.mm-video {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 380px;
+	}
+
+	@media (min-width: 700px) {
+		.mm-video {
+			max-width: none;
+		}
+	}
+
+	.mm-video figcaption {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		padding-top: 0.7rem;
+	}
+
+	.mm-placeholder-wide {
+		aspect-ratio: 16 / 9;
+	}
+
+	.mm-placeholder-tall {
+		aspect-ratio: 9 / 16;
+	}
+
+	.mm-placeholder {
+		margin: 0;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		text-align: center;
 		gap: 0.35rem;
 		background: var(--mm-panel);
@@ -814,16 +969,6 @@
 		font-size: 1.1rem;
 		color: var(--mm-cream);
 		margin: 0.4rem 0 0;
-	}
-
-	.mm-placeholder-body {
-		margin: 0;
-		max-width: 44ch;
-		font-size: 0.92rem;
-		color: var(--mm-cream-dim);
-	}
-	.mm-placeholder-body a {
-		color: var(--mm-pink-soft);
 	}
 
 	/* Assets */
@@ -928,46 +1073,26 @@
 		text-decoration: underline;
 	}
 
-	/* Painting styles */
-	.mm-styles-row {
-		margin-top: 1.25rem;
+	:global(.mm-btn-zip) {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 1.5rem;
-	}
-
-	.mm-style-card {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.6rem;
-		text-decoration: none;
-	}
-
-	.mm-style-frame {
+		width: fit-content;
+		margin: 1.1rem auto 0;
 		background: var(--mm-panel);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 16px;
-		padding: 0.9rem 1.1rem;
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+		color: var(--mm-cream);
+		border-color: rgba(255, 63, 174, 0.35);
+		font-size: 0.9rem;
+		padding: 0.6rem 1.1rem;
 	}
-	.mm-style-card:hover .mm-style-frame {
-		border-color: var(--mm-pink-soft);
-	}
-
-	.mm-style-frame img {
-		image-rendering: pixelated;
-		height: 48px;
-		width: auto;
-		display: block;
+	:global(a.mm-btn-zip:hover) {
+		border-color: var(--mm-pink);
+		color: var(--mm-pink-soft);
 	}
 
-	.mm-style-name {
-		font-family: 'Baloo 2 Variable', sans-serif;
+	.mm-zip-meta {
+		font-size: 0.75rem;
 		font-weight: 600;
-		font-size: 0.85rem;
 		color: var(--mm-cream-dim);
+		opacity: 0.8;
 	}
 
 	/* Callout */
