@@ -65,8 +65,7 @@
 	// The embed only loads once the visitor clicks play.
 	let playing = $state(false);
 
-	// TODO: replace with the real Steam app id before deploying.
-	const steamUrl = 'https://store.steampowered.com/app/0000000/Mini_MeMao/';
+	const steamUrl = 'https://store.steampowered.com/app/4979870/Mini_MeMao/';
 
 	const screenshots = [
 		{

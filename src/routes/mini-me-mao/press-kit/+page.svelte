@@ -9,10 +9,9 @@
 	import IconExternalLink from 'lucide-svelte/icons/external-link';
 	import IconCheck from 'lucide-svelte/icons/check';
 
-	// Set this once the Steam page is live; the nav badge and factsheet both use it.
-	// TODO: replace with the real Steam app id before deploying.
+	// nav badge and factsheet both use steamUrl below
 	/** @type {string} */
-	const steamUrl = 'https://store.steampowered.com/app/0000000/Mini_MeMao/';
+	const steamUrl = 'https://store.steampowered.com/app/4979870/Mini_MeMao/';
 
 	const factsheet = [
 		{ label: 'Developer', value: 'Sleeping Robot Games' },
