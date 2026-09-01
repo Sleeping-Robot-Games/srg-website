@@ -60,8 +60,7 @@
 		}
 	];
 
-	// TODO: swap in the real YouTube id before deploying.
-	const trailerId = 'REPLACE_ME';
+	const trailerId = 'c_9bRL9W9X4';
 
 	// The embed only loads once the visitor clicks play.
 	let playing = $state(false);

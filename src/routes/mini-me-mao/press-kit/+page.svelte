@@ -58,8 +58,7 @@
 		'https://drive.google.com/drive/folders/1rxFex9bRoP3EQaZpvMFk0H_ImPitBd8i?usp=drive_link';
 	const trailerZipMeta = 'Google Drive · horizontal + vertical';
 
-	// TODO: swap in the real YouTube id.
-	const trailerId = 'REPLACE_ME';
+	const trailerId = 'c_9bRL9W9X4';
 
 	// The embed only loads once the visitor clicks play.
 	let playing = $state(false);
