@@ -187,7 +187,12 @@
 					></iframe>
 				{:else}
 					<button type="button" class="mm-trailer-btn" onclick={() => (playing = true)}>
-						<img src="{PK}/itchcapsule.jpg" alt="" aria-hidden="true" class="mm-trailer-poster" />
+						<img
+							src="{PK}/ytthumb_1280x720.png"
+							alt=""
+							aria-hidden="true"
+							class="mm-trailer-poster"
+						/>
 						<span class="mm-trailer-overlay">
 							<span class="mm-trailer-play"><IconPlay class="h-7 w-7" /></span>
 						</span>

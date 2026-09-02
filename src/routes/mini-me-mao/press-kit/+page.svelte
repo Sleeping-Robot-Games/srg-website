@@ -104,6 +104,24 @@
 			file: `${PK}/social-post.png`,
 			meta: 'PNG · 1232×706 · 1.5 MB',
 			alt: 'Social-media-sized version of the Mini Me-Mao key art with the logo'
+		},
+		{
+			name: 'Widescreen key art',
+			file: `${PK}/1920x1080.png`,
+			meta: 'PNG · 1920×1080 · 3 MB',
+			alt: 'Widescreen Mini Me-Mao key art: the painter at her easel in a plant-filled studio, with the game logo overlaid at left'
+		},
+		{
+			name: 'YouTube thumbnail',
+			file: `${PK}/ytthumb_1280x720.png`,
+			meta: 'PNG · 1280×720 · 1.5 MB',
+			alt: 'Mini Me-Mao YouTube thumbnail: the painter at her easel with the game logo overlaid at left'
+		},
+		{
+			name: 'YouTube thumbnail (no title)',
+			file: `${PK}/ytthumb_no_title_1280x720.png`,
+			meta: 'PNG · 1280×720 · 1.6 MB',
+			alt: 'The same YouTube thumbnail scene without the logo overlay, showing the painter at her easel'
 		}
 	];
 
@@ -331,7 +349,7 @@
 						></iframe>
 					{:else}
 						<button type="button" class="mm-video-btn" onclick={() => (playing = true)}>
-							<img src="{PK}/itchcapsule.jpg" alt="" aria-hidden="true" />
+							<img src="{PK}/ytthumb_1280x720.png" alt="" aria-hidden="true" />
 							<span class="mm-video-play"><IconPlay class="h-6 w-6" /></span>
 							<span class="mm-sr-only">Play the Mini Me-Mao announcement trailer</span>
 						</button>
@@ -381,7 +399,7 @@
 			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-key-art.zip" download>
 				<IconFolderDown class="h-4 w-4" />
 				Download all key art
-				<span class="mm-zip-meta">ZIP · 7.8 MB</span>
+				<span class="mm-zip-meta">ZIP · 14 MB</span>
 			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Screenshots</h3>
