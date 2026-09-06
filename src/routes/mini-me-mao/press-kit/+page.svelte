@@ -1,5 +1,5 @@
 <script>
-	import IconMail from 'lucide-svelte/icons/mail';
+	import IconImages from 'lucide-svelte/icons/images';
 	import IconDownload from 'lucide-svelte/icons/download';
 	import IconFolderDown from 'lucide-svelte/icons/folder-down';
 	import IconInfo from 'lucide-svelte/icons/info';
@@ -274,13 +274,18 @@
 			<p class="mm-pk-eyebrow">Press Kit</p>
 			<p class="mm-pk-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas mm-pk-hero-ctas">
-				<a href="#trailer" class="mm-btn mm-btn-primary">
-					<IconPlay class="h-4 w-4" />
-					Watch the trailer
+				<a
+					href={driveMirror}
+					class="mm-btn mm-btn-primary"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<IconFolderDown class="h-4 w-4" />
+					Download everything
 				</a>
-				<a href="mailto:press@sleepingrobotgames.com" class="mm-btn mm-btn-ghost">
-					<IconMail class="h-4 w-4" />
-					Press contact
+				<a href="#assets" class="mm-btn mm-btn-ghost">
+					<IconImages class="h-4 w-4" />
+					Browse assets
 				</a>
 			</div>
 		</div>
