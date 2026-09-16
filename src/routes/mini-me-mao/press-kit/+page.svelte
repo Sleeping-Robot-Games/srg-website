@@ -173,6 +173,21 @@
 		}
 	];
 
+	const characterArt = [
+		{
+			name: 'Artist at the easel',
+			file: `${PK}/ogeassel_blur.png`,
+			meta: 'PNG · 4500×3600 · 1.8 MB · transparent',
+			alt: 'Hand-drawn art of the artist standing at a wooden easel with a blank canvas, brush raised in one hand and a paint palette in the other'
+		},
+		{
+			name: 'Artist, no easel',
+			file: `${PK}/oggirlsingle.png`,
+			meta: 'PNG · 2075×3320 · 1.4 MB · transparent',
+			alt: 'Hand-drawn character art of the artist on her own, brush held up in one hand and a paint palette in the other'
+		}
+	];
+
 	const animations = [
 		{
 			name: 'Painting',
@@ -274,12 +289,7 @@
 			<p class="mm-pk-eyebrow">Press Kit</p>
 			<p class="mm-pk-hero-tagline">A tiny companion that lives right on your desktop</p>
 			<div class="mm-hero-ctas mm-pk-hero-ctas">
-				<a
-					href={driveMirror}
-					class="mm-btn mm-btn-primary"
-					target="_blank"
-					rel="noreferrer"
-				>
+				<a href={driveMirror} class="mm-btn mm-btn-primary" target="_blank" rel="noreferrer">
 					<IconFolderDown class="h-4 w-4" />
 					Download everything
 				</a>
@@ -453,6 +463,30 @@
 				<IconFolderDown class="h-4 w-4" />
 				Download all logos
 				<span class="mm-zip-meta">ZIP · 1.8 MB</span>
+			</a>
+
+			<h3 class="mm-h3 mm-h3-group">Character art</h3>
+			<div class="mm-asset-grid">
+				{#each characterArt as a}
+					<figure class="mm-asset">
+						<div class="mm-asset-frame mm-asset-frame-logo">
+							<img src={a.file} alt={a.alt} />
+						</div>
+						<figcaption>
+							<span class="mm-asset-name">{a.name}</span>
+							<span class="mm-asset-meta">{a.meta}</span>
+							<a class="mm-asset-dl" href={a.file} download>
+								<IconDownload class="h-3.5 w-3.5" />
+								Download
+							</a>
+						</figcaption>
+					</figure>
+				{/each}
+			</div>
+			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-character-art.zip" download>
+				<IconFolderDown class="h-4 w-4" />
+				Download all character art
+				<span class="mm-zip-meta">ZIP · 3 MB</span>
 			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Character animations</h3>
