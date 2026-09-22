@@ -24,7 +24,7 @@
 			<div class="hub-grid">
 				<a href="/mini-me-mao" class="hub-card" style="--card-accent: #ff3fae;">
 					<div class="hub-card-img">
-						<img src="/images/mini-memao-capsule.png" alt="Mini Me-Mao" />
+						<img src="/images/mini-me-mao/presskit/maincapsule.png" alt="Mini Me-Mao" />
 					</div>
 					<div class="hub-card-body">
 						<div class="hub-card-title-row">

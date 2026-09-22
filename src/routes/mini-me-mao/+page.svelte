@@ -66,6 +66,7 @@
 	let playing = $state(false);
 
 	const steamUrl = 'https://store.steampowered.com/app/4979870/Mini_MeMao/';
+	const demoUrl = 'https://store.steampowered.com/app/5034270/Mini_MeMao_Demo/';
 
 	const screenshots = [
 		{
@@ -110,7 +111,7 @@
 	/>
 	<meta
 		property="og:image"
-		content="https://sleepingrobotgames.com/images/mini-me-mao/presskit/maincapsule.jpg"
+		content="https://sleepingrobotgames.com/images/mini-me-mao/presskit/maincapsule.png"
 	/>
 </svelte:head>
 
@@ -138,7 +139,7 @@
 		<div class="mm-hero-scrim"></div>
 		<div class="mm-hero-content">
 			<img
-				src="/images/mini-me-mao/presskit/Mini_Memao_Title.png"
+				src="/images/mini-me-mao/presskit/memao-logo-glow.png"
 				alt="Mini Me-Mao"
 				class="mm-hero-logo"
 			/>
@@ -148,12 +149,7 @@
 					<IconSparkles class="h-4 w-4" />
 					Wishlist on Steam
 				</a>
-				<a
-					href="https://sleeping-robot-games.itch.io/mini-me-mao"
-					target="_blank"
-					rel="noreferrer"
-					class="mm-btn mm-btn-ghost"
-				>
+				<a href={demoUrl} target="_blank" rel="noreferrer" class="mm-btn mm-btn-ghost">
 					Play the demo
 				</a>
 				<a href="/mini-me-mao/press-kit" class="mm-btn mm-btn-ghost">
@@ -423,7 +419,7 @@
 	}
 
 	.mm-hero-logo {
-		width: min(520px, 80vw);
+		width: min(440px, 78vw);
 		max-width: 100%;
 		height: auto;
 		display: block;

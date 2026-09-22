@@ -65,26 +65,32 @@
 	const keyArt = [
 		{
 			name: 'Main capsule',
-			file: `${PK}/maincapsule.jpg`,
-			meta: 'JPG · 1232×706 · 878 KB',
+			file: `${PK}/maincapsule.png`,
+			meta: 'PNG · 1232×706 · 1.6 MB',
 			alt: 'Mini Me-Mao main capsule art: a young painter at her easel in a warm, lamp-lit studio full of plants and framed pictures, with the game logo at left'
 		},
 		{
+			name: 'Header capsule',
+			file: `${PK}/headercapsule.png`,
+			meta: 'PNG · 920×430 · 622 KB',
+			alt: 'Wide Steam header capsule with the Mini Me-Mao logo beside the painter at her easel'
+		},
+		{
 			name: 'Vertical capsule',
-			file: `${PK}/verticalcapsule2.jpg`,
-			meta: 'JPG · 748×896 · 665 KB',
+			file: `${PK}/verticalcapsule2.png`,
+			meta: 'PNG · 748×896 · 1.2 MB',
 			alt: 'Vertical crop of the Mini Me-Mao capsule art with the logo across the lower half'
 		},
 		{
 			name: 'Library capsule',
-			file: `${PK}/librarycapsule2.jpg`,
-			meta: 'JPG · 600×900 · 542 KB',
+			file: `${PK}/librarycapsule2.png`,
+			meta: 'PNG · 600×900 · 1 MB',
 			alt: 'Tall Steam library capsule showing the painter and her easel with the logo at the bottom'
 		},
 		{
 			name: 'Small capsule',
-			file: `${PK}/smallcapsule.jpg`,
-			meta: 'JPG · 462×174 · 105 KB',
+			file: `${PK}/smallcapsule.png`,
+			meta: 'PNG · 462×174 · 154 KB',
 			alt: 'Wide Steam small capsule with the Mini Me-Mao logo beside the painter at her canvas'
 		},
 		{
@@ -95,20 +101,26 @@
 		},
 		{
 			name: 'Itch.io capsule',
-			file: `${PK}/itchcapsule.jpg`,
-			meta: 'JPG · 630×500 · 342 KB',
+			file: `${PK}/itchcapsule.png`,
+			meta: 'PNG · 630×500 · 553 KB',
 			alt: 'Itch.io capsule art of the painter at her easel beside a large monstera plant'
 		},
 		{
 			name: 'Social post',
 			file: `${PK}/social-post.png`,
-			meta: 'PNG · 1232×706 · 1.5 MB',
+			meta: 'PNG · 1232×706 · 1.2 MB',
 			alt: 'Social-media-sized version of the Mini Me-Mao key art with the logo'
+		},
+		{
+			name: 'Email header',
+			file: `${PK}/email-header.png`,
+			meta: 'PNG · 1500×564 · 1.3 MB',
+			alt: 'Letterbox email header banner: the painter at her easel with the Mini Me-Mao logo at left'
 		},
 		{
 			name: 'Widescreen key art',
 			file: `${PK}/1920x1080.png`,
-			meta: 'PNG · 1920×1080 · 3 MB',
+			meta: 'PNG · 1920×1080 · 3.2 MB',
 			alt: 'Widescreen Mini Me-Mao key art: the painter at her easel in a plant-filled studio, with the game logo overlaid at left'
 		},
 		{
@@ -161,9 +173,15 @@
 	const logos = [
 		{
 			name: 'Mini Me-Mao logo',
-			file: `${PK}/Mini_Memao_Title.png`,
-			meta: 'PNG · 4500×3600 · 2 MB · transparent',
-			alt: 'The Mini Me-Mao wordmark: pixel-style "mini" above a soft rounded "me-mao", both with a hot pink glow'
+			file: `${PK}/memao-logo.png`,
+			meta: 'PNG · 1280×720 · 380 KB · transparent',
+			alt: 'The Mini Me-Mao wordmark: chunky bubble letters reading "mini" above "me-mao" in pinks, with hearts dotting the i\'s and a paint palette forming the final O'
+		},
+		{
+			name: 'Mini Me-Mao logo (glow)',
+			file: `${PK}/memao-logo-glow.png`,
+			meta: 'PNG · 1280×720 · 500 KB · transparent',
+			alt: 'The Mini Me-Mao wordmark with a soft white outer glow, for placing over dark or busy backgrounds'
 		},
 		{
 			name: 'Sleeping Robot Games logo',
@@ -244,7 +262,7 @@
 	/>
 	<meta
 		property="og:image"
-		content="https://sleepingrobotgames.com/images/mini-me-mao/presskit/maincapsule.jpg"
+		content="https://sleepingrobotgames.com/images/mini-me-mao/presskit/maincapsule.png"
 	/>
 </svelte:head>
 
@@ -273,7 +291,7 @@
 		<picture>
 			<source media="(min-width: 700px)" srcset="/images/mini-me-mao/presskit/libraryhero.jpg" />
 			<img
-				src="/images/mini-me-mao/presskit/itchcapsule.jpg"
+				src="/images/mini-me-mao/presskit/itchcapsule.png"
 				alt=""
 				class="mm-pk-hero-bg"
 				aria-hidden="true"
@@ -282,7 +300,7 @@
 		<div class="mm-pk-hero-scrim"></div>
 		<div class="mm-pk-hero-content">
 			<img
-				src="/images/mini-me-mao/presskit/Mini_Memao_Title.png"
+				src="/images/mini-me-mao/presskit/memao-logo-glow.png"
 				alt="Mini Me-Mao"
 				class="mm-pk-hero-logo"
 			/>
@@ -414,7 +432,7 @@
 			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-key-art.zip" download>
 				<IconFolderDown class="h-4 w-4" />
 				Download all key art
-				<span class="mm-zip-meta">ZIP · 14 MB</span>
+				<span class="mm-zip-meta">ZIP · 18 MB</span>
 			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Screenshots</h3>
@@ -441,7 +459,7 @@
 				<span class="mm-zip-meta">ZIP · 7.5 MB</span>
 			</a>
 
-			<h3 class="mm-h3 mm-h3-group">Logo</h3>
+			<h3 class="mm-h3 mm-h3-group">Logos</h3>
 			<div class="mm-asset-grid">
 				{#each logos as a}
 					<figure class="mm-asset">
@@ -462,7 +480,7 @@
 			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-logos.zip" download>
 				<IconFolderDown class="h-4 w-4" />
 				Download all logos
-				<span class="mm-zip-meta">ZIP · 1.8 MB</span>
+				<span class="mm-zip-meta">ZIP · 886 KB</span>
 			</a>
 
 			<h3 class="mm-h3 mm-h3-group">Character art</h3>
@@ -510,7 +528,7 @@
 			<a class="mm-btn mm-btn-zip" href="/press/mini-me-mao-animations.zip" download>
 				<IconFolderDown class="h-4 w-4" />
 				Download all animations
-				<span class="mm-zip-meta">ZIP · 68 KB</span>
+				<span class="mm-zip-meta">ZIP · 65 KB</span>
 			</a>
 		</section>
 
@@ -726,7 +744,7 @@
 	}
 
 	.mm-pk-hero-logo {
-		width: min(340px, 72vw);
+		width: min(300px, 70vw);
 		height: auto;
 		display: block;
 		filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.7));
